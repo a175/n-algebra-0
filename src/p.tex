@@ -137,9 +137,69 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \end{example}
 
 \section{単項演算}
+集合$X$から集合$Y$への写像を単項演算と呼んだ.
+特に, $X$から$X$への写像を$X$上の単項演算と呼ぶ.
+例えば, $X$上の恒等写像$\id_X$は, $X$上の単項演算である.
+\begin{definition}
+  次の条件を満たす$X$上の演算$f$をinvolutionと呼ぶ:
+  全ての$x\in X$に対し,
+  \begin{align*}
+    f(f(x))=x.
+  \end{align*}
+\end{definition}
+\begin{example}
+  実数$x$に対し, その$-1$倍を対応させる
+  \begin{align*}
+    \shazo{-\bullet}
+          {\RR}{\RR}
+          {x}{-x}
+  \end{align*}
+  は$\RR$上の単項演算である.
+  $-(-x)=x$であるので,
+  involutionである.
+\end{example}
+\begin{example}
+  正の実数$x$に対し, その逆数を対応させる
+  \begin{align*}
+    \shazo{\bullet^{-1}}
+          {\RR_{>0}}{\RR_{>0}}
+          {x}{x^{-1}}
+  \end{align*}
+  は$\RR_{>0}$上の単項演算である.
+  $(x^{-1})^{-1}=x$であるので,
+  involutionである.
+\end{example}
+\begin{example}
+  正の実数$x$に対し, その平方根を対応させる
+  \begin{align*}
+    \shazo{\sqrt{\bullet}}
+          {\RR_{>0}}{\RR_{>0}}
+          {x}{\sqrt{x}}
+  \end{align*}
+  は$\RR_{>0}$上の単項演算である.
+  $16\in\RR_{>0}$に対し,
+  $\sqrt{\sqrt{16}}=\sqrt{4}=2\neq 16$であるので,
+  involutionではない.
+\end{example}
+\begin{prop}
+  $f$が$X$上のinvolutionであるとき,
+  \begin{align*}
+    \shazo{\varphi}
+          {X}{X}
+          {x}{f(x)}
+  \end{align*}
+  は全単射である,
+\end{prop}
+\begin{proof}
+  $f$がinvolutionであるので, $\varphi\circ\varphi=\id_X$である.
+  これは, $\varphi$が$\varphi$自身の逆写像であることを意味する.
+\end{proof}
+
+\section{二項演算}
 
 \sectionX{章末問題}
 \begin{enumerate}
   \item
 \end{enumerate}
+
 
