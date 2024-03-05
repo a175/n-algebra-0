@@ -26,6 +26,9 @@
 \begin{definition}
 集合$X$から集合$Y$への
 写像$f$のことを演算と呼ぶ.
+集合$X$として, $X_1\times \cdots \times X_n$という$n$個の集合の直積を考える場合には,
+$n$項演算と呼ぶ.
+$n=1$のときには単項演算と呼ぶ.
 \end{definition}
 $X$の元に$Y$を対応させる`対応'としての側面を意識しているとき
 `写像'という述語を用いることが多く,
@@ -42,15 +45,98 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 頻繁にかつ無意識に使われる重要なものである.
 \cref{well-def-map:3}は一見いつでも満たされるように思うかもしれないが,
 表記は異なるが等しくなる可能性がある元を$X$が含むときには,
-満たされない可能性がある.
+\cref{well-def-map:3}が満たされない可能性がある.
 新しく演算を定義する際には,
 注意する必要がある.
 
-演算の例をいくつか挙げる:
-前置記法単項演算.
-前置記法2項演算.
-中置記法2項演算.
-内積型.
+以下で, 単項演算と二項演算の例をいくつか挙げる.
+\begin{example}
+  実数$\theta$から,
+  各$\theta$に対する正弦$\sin(\theta)$を得ることを考える.
+  \begin{align*}
+    \shazo{\sin}
+          {\RR}{\RR}
+          {x}{\sin(x)}
+  \end{align*}
+  という写像を考えると言ってもいい.
+  このとき, $\sin$は単項演算である.  
+\end{example}
+\begin{example}
+  実数$x$に対し, その$-1$倍を対応させる
+  \begin{align*}
+    \shazo{-\bullet}
+          {\RR}{\RR}
+          {x}{-x}
+  \end{align*}
+  も単項演算である.
+  $-$だけでは, どこに実数$x$を代入すればよいかわかりにくいため,
+  代入する部分をはっきりさせるため,
+  $-\bullet$とここでは書いている.
+\end{example}
+これらの例や定義では, 演算を表す記号を,
+関数を表す際に通常行われるように,
+先頭に書いているが,
+このような表記を用いる必要はない.
+\begin{example}
+  実数$x$に対し, その絶対値を対応させる
+  \begin{align*}
+    \shazo{|\bullet|}
+          {\RR}{\RR}
+          {x}{|x|}
+  \end{align*}
+  も単項演算である.
+  このように, `カッコ'を使って演算を表すこともある.
+\end{example}
+\begin{example}
+  非負整数$x$に対し, その階乗を対応させる
+  \begin{align*}
+    \shazo{\bullet !}
+          {\NN}{\NN}
+          {x}{x!}
+  \end{align*}
+  も単項演算である.
+  このように, 演算を表す記号を後ろに書くような場合もある.
+\end{example}
+\begin{example}
+  複素数$x$に対し, その複素共軛を対応させる
+  \begin{align*}
+    \shazo{\bar\bullet }
+          {\CC}{\CC}
+          {x}{\bar{x}}
+  \end{align*}
+  も単項演算である.
+\end{example}
+\begin{example}
+  非負実数$x$に対し, その平方根を対応させる
+  \begin{align*}
+    \shazo{\sqrt\bullet }
+          {\RR_{>0}}{\RR}
+          {x}{\sqrt{x}}
+  \end{align*}
+  も単項演算である.
+\end{example}
+\begin{example}
+  整数$x,y$に対し, その和を対応させる
+  \begin{align*}
+    \shazo{\bullet+\bullet}
+          {\ZZ\times \ZZ}{\ZZ}
+          {(x,y)}{x+y}
+  \end{align*}
+  は二項演算である.
+  二項演算では, 演算を表す記号を中央に書く場合もある.
+\end{example}
+\begin{example}
+  実ベクトル$x,y$に対し, その内積を対応させる
+  \begin{align*}
+    \shazo{\Braket{\bullet,\bullet}}
+          {\RR^n\times \RR^n}{\RR}
+          {(x,y)}{\Braket{x,y}}
+  \end{align*}
+  も二項演算である.
+  二項演算でも, `カッコ'を使って演算を表すこともある.
+\end{example}
+
+\section{単項演算}
 
 \sectionX{章末問題}
 \begin{enumerate}
