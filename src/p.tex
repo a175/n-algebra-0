@@ -125,6 +125,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
   \end{align*}
   は二項演算である.
   二項演算では, 演算を表す記号を中央に書く場合もある.
+  このような記法を中置記法と呼ぶ.
 \end{example}
 \begin{example}
   実ベクトル$x,y$に対し, その内積を対応させる
@@ -213,9 +214,239 @@ $X$や$Y$が代数系であることが多く,
 この場合にもそれらの演算と作用の整合性に関する条件が要請されることが多い.
 
 \subsection{$X$上の二項演算}
+ここでは, $X$上の二項関係について考える.
+$\ast$を$X$上の中置記法の二項演算とする.
+つまり
+\begin{align*}
+  \shazo{\bullet\ast\bullet}
+        {X\times X}{X}
+        {(x,y)}{x\ast y}
+\end{align*}
+について考える.
+
+\subsubsection{可換律}
+\begin{definition}
+  次の条件を満たすとき,
+  $\ast$は可換律を満たすという:
+  \begin{align*}
+    x,y\in X\implies x\ast y=y\ast x.
+  \end{align*}
+\end{definition}
+\begin{remark}
+  $\ast$が可換律を満たすことを,
+  $\ast$が可換であるともいう,
+\end{remark}
+\begin{example}
+  $\NN$上の二項演算として,
+  通常の和$+$を考える.
+  和$+$は可換である.
+\end{example}
+\begin{example}
+  $\NN$上の二項演算として,
+  通常の積$\cdot$を考える.
+  積$\cdot$は可換である.
+\end{example}
+\begin{nonexample}
+\begin{align*}
+  \shazo{\bullet^\bullet}
+        {\ZZ_{>0}\times \ZZ_{>0}}{\ZZ_{>0}}
+        {(x,y)}{x^y}
+\end{align*}
+は
+$\ZZ_{>0}$上の二項演算である.
+\begin{align*}
+  2^3&=8,\\
+  3^2&=9
+\end{align*}
+であるので,
+この演算は可換ではない.
+\end{nonexample}
+\begin{nonexample}
+  $n$次正方行列同士の積も$n$次正方行列である.
+  $n$次正方行列上の二項演算として積を考える.
+  \begin{align*}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      0&0\\1&0
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+      1&0\\0&0
+    \end{pmatrix}
+    \\
+    \begin{pmatrix}
+      0&0\\1&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      0&1\\0&0
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+      0&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  積は可換ではない.
+\end{nonexample}
+
+\begin{nonexample}
+  $n$次正方行列$A$, $B$に対し,
+  \begin{align*}
+    [A,B]=AB-BA
+  \end{align*}
+  とおくと,
+  $[\bullet,\bullet]$は,
+  $n$次正方行列上の二項演算である.
+  この演算をリー・ブラケットと呼ぶ.
+  \begin{align*}
+    [A,B]&=AB-BA\\
+    [B,A]&=BA-AB=-(AB-BA)
+  \end{align*}
+  であるので
+  $[A,B]=-[B,A]$である.
+  \begin{align*}
+    E&=\begin{pmatrix}0&1\\0&0\end{pmatrix}\\
+    F&=\begin{pmatrix}0&0\\1&0\end{pmatrix}
+  \end{align*}
+  とおくと,
+  \begin{align*}
+    [E,F]&=EF-FE=
+    \begin{pmatrix}
+      1&0\\0&0
+    \end{pmatrix}
+    -
+    \begin{pmatrix}
+      0&0\\0&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1&0\\0&-1
+    \end{pmatrix}\\
+    [F,E]&=-[E,F]=
+    \begin{pmatrix}
+      -1&0\\0&1
+    \end{pmatrix}
+  \end{align*}
+  となるので, $[\bullet,\bullet]$は可換ではない.
+\end{nonexample}
+
+\subsubsection{結合律}
+\begin{definition}
+  次の条件を満たすとき,
+  $\ast$は結合律を満たすという:
+  \begin{align*}
+    x,y,z\in X\implies (x\ast y)\ast z = x\ast (y\ast z).
+  \end{align*}
+\end{definition}
+\begin{remark}
+  $\ast$が結合律を満たすことを,
+  $\ast$が結合的であるともいう,
+\end{remark}
+\begin{example}
+  $\NN$上の二項演算として,
+  通常の和$+$を考える.
+  和$+$は結合律を満たす.
+\end{example}
+\begin{nonexample}
+\begin{align*}
+  \shazo{\bullet^\bullet}
+        {\ZZ_{>0}\times \ZZ_{>0}}{\ZZ_{>0}}
+        {(x,y)}{x^y}
+\end{align*}
+は
+$\ZZ_{>0}$上の二項演算である.
+\begin{align*}
+  (3^3)^3&=9^3=729,\\
+  3^{(3^3)}&=3^9=19683
+\end{align*}
+であるので,
+この演算は結合律を満たさない.
+\end{nonexample}
+
+\begin{nonexample}
+  $n$次正方行列上の二項演算としてリー・ブラケットを考える.
+  \begin{align*}
+    [A,A]&=AA-AA=O_{n}
+  \end{align*}
+  である.  ただし$O_n$は零行列を表す.
+  \begin{align*}
+    E&=\begin{pmatrix}0&1\\0&0\end{pmatrix}\\
+    F&=\begin{pmatrix}0&0\\1&0\end{pmatrix}\\
+    H&=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+  \end{align*}
+  とおくと,
+  \begin{align*}
+    [[E,E],F]&=[O_n,F]=O_nF-FO_n=O_n\\
+    [E,[E,F]]&=[E,H]=-2E
+  \end{align*}
+  となるので, リー・ブラケットは結合的ではない.
+\end{nonexample}
+\begin{nonexample}
+  $2$元集合$X=\Set{\top, \bot}$上の演算$\overline{\bullet\lor\bullet}$を
+  \begin{align*}
+    \overline{\top \lor \top} &= \bot&
+    \overline{\top \lor \bot} &= \bot\\
+    \overline{\bot \lor \top} &= \bot&
+    \overline{\bot \lor \bot} &= \top    
+  \end{align*}
+  で定める.
+  このとき,
+  \begin{align*}
+    \overline{\bot \lor \overline{\bot \lor \top}} &=\overline{\bot \lor \bot}=\top\\
+    \overline{\overline{\bot \lor \bot} \lor \top}&=
+    \overline{\top \lor \top}=\bot
+  \end{align*}
+  であるので, この演算は結合的でない.
+\end{nonexample}
+
+\begin{remark}
+  $\ast$が結合律が成り立つ演算ならば,
+  \begin{align*}
+    a\ast b \ast c
+  \end{align*}
+  を
+  \begin{align*}
+    (a\ast b) \ast c
+  \end{align*}
+  と解釈しても,
+  \begin{align*}
+    a\ast (b \ast c)
+  \end{align*}
+  と解釈しても等しい元となる.
+  これは,
+  \begin{align*}
+    a_1\ast a_2 \ast \cdots \ast a_n
+  \end{align*}
+  のような場合でも同様である.
+  そのため,
+  結合の順序を表すカッコを省略することが多い.
+\end{remark}
+\begin{remark}
+  $\ast$が$X$上の結合的な二項演算であるとき,
+  正の整数$n$に対し,
+  \begin{align*}
+    \underbrace{a\ast \cdots \ast a}_{n}
+  \end{align*}
+  は$a\in X$と$n$のみから決まる.
+  そこで, これを, $a$と$n$のみを使って略記することがある.
+  演算によってその略記法は異なるが,
+  $a^n$とか$na$などと書かれることがある.
+  また複数の演算が扱われているときには
+  $a^{\ast n}$などと演算の記号を伴って書かれる記法もある.
+
+  $na$と略記されるものは和と呼ばれることが多く,
+  $a^n$と略記されるものは積と呼ばれることが多いように思う.
+\end{remark}
+
+
 \sectionX{章末問題}
 \begin{enumerate}
-  \item
+\item 可換かつ結合的な二項演算の例を挙げよ.
+\item 非可換かつ結合的な二項演算の例を挙げよ.
+\item 可換かつ非結合的な二項演算の例を挙げよ.
+%\item 非可換かつ非結合的な二項演算の例を挙げよ.
 \end{enumerate}
 
 
