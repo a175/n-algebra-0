@@ -436,9 +436,94 @@ $\ZZ_{>0}$上の二項演算である.
   また複数の演算が扱われているときには
   $a^{\ast n}$などと演算の記号を伴って書かれる記法もある.
 
-  $na$と略記されるものは和と呼ばれることが多く,
-  $a^n$と略記されるものは積と呼ばれることが多いように思う.
+  和と呼ばれる演算は
+  $na$と略記されることが多く,
+  積と呼ばれる演算は,
+  $a^n$と略記されることが多いように思う.
 \end{remark}
+
+\subsubsection{単位元}
+\begin{definition}
+  次の条件を満たすとき,
+  $e\in X$は$\ast$に関し左単位的であるという:
+  \begin{enumerate}
+    \item $x\in X\implies e\ast x=x$.
+  \end{enumerate}
+  次の条件を満たすとき,
+  $e\in X$は$\ast$に関し右単位的であるという:
+  \begin{enumerate}
+    \item $x\in X\implies x\ast e=x$.
+  \end{enumerate}
+  $e\in X$が,
+  $\ast$に関し左単位的かつ
+  $\ast$に関し右単位的であるとき,
+  $e$は$\ast$に関し単位的であるという.
+\end{definition}
+\begin{lemma}
+  $e\in X$が左単位的であり,
+  $e'\in X$が右単位的であるなら,
+  $e=e'$,
+\end{lemma}
+\begin{proof}
+  $e\ast e'$について考える.
+  $e$は左単位的であるので, $e\ast e'=e'$.
+  $e'$は右単位的であるので, $e\ast e'=e$.
+  したがって, $e=e'$.
+\end{proof}
+\begin{cor}
+\label{cor:uniq:unit}
+  $e\in X$, $e'\in X$が単位的なら,
+  $e=e'$.
+\end{cor}
+\begin{remark}
+  \Cref{cor:uniq:unit}により,
+  単位的な元は存在するなら, ただ一つであることがわかる.
+  単位的な元を (もし存在するなら)
+  $\ast$の単位元と呼ぶ.
+
+  $\ast$が和と呼ばれるときには, $\ast$の単位元は零元とよばれ$0$や$O$にまつわる記号が用いられることが多く,
+  $\ast$が和と呼ばれるときには, $\ast$の単位元は$1$や$E$, $I$にまつわる記号が用いられることが多いように思う.
+\end{remark}
+\begin{cor}
+  右単位元と左単位元が存在するなら,
+  それらは一致し$\ast$の単位元である,
+\end{cor}
+\begin{cor}
+  $\ast$の単位元が存在するとする.
+  \begin{enumerate}
+  \item 左単位的な元は, $\ast$の単位元である.
+  \item 右単位的な元は, $\ast$の単位元である.
+  \end{enumerate}
+\end{cor}
+\begin{cor}
+  $\ast$は可換な二項演算であるとする.
+  \begin{enumerate}
+  \item 左単位的な元は, $\ast$の単位元である.
+  \item 右単位的な元は, $\ast$の単位元である.
+  \end{enumerate}
+\end{cor}
+\begin{example}
+  $\ZZ$における通常の和$+$を考える.
+  $0$は$+$に関する単位元である.
+\end{example}
+\begin{example}
+  $\ZZ_{>0}$における通常の積$\cdot$を考える.
+  $1$は$\cdot$に関する単位元である.
+\end{example}
+\begin{example}
+  二点集合$\Set{0,1}$上の演算$\rhd$
+  を
+  \begin{align*}
+    0\rhd 0 &= 0&
+    0\rhd 1 &= 1\\
+    1\rhd 0 &= 0&
+    1\rhd 1 &= 1
+  \end{align*}
+  で定義する.
+  このとき, $0$は左単位的である.
+  また$1$も左単位的である.
+\end{example}
+\subsection{吸収元}
 
 
 \sectionX{章末問題}
