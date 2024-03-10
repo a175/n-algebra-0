@@ -136,6 +136,17 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
   二項演算でも, `カッコ'を使って演算を表すこともある.
 \end{example}
 
+\begin{example}
+  実数$x$と非負整数$n$に対し,
+  二項係数を対応させる
+  \begin{align*}
+    \shazo{\binom{\bullet}{\bullet}}
+          {\RR\times \NN}{\RR}
+          {(x,n)}{\frac{x(x-1)\cdots(x-n+1)}{n!}}
+  \end{align*}
+  も二項演算である.
+\end{example}
+
 写像と演算の組を代数系と呼ぶ.
 演算が複数与えられることもある.
 本稿の目的は,
@@ -162,7 +173,36 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 特に, $X$から$X$への写像を$X$上の単項演算と呼ぶ.
 例えば, $X$上の恒等写像$\id_X$は, $X$上の単項演算である.
 \begin{definition}
-  次の条件を満たす$X$上の演算$f$をinvolutionと呼ぶ:
+  次の条件を満たすとき,
+  $X$上の単項演算$f$と$g$は可換であるという:
+  \begin{enumerate}
+  \item $x\in X \implies f(g(x))=g(f(x))$.
+  \end{enumerate}
+\end{definition}
+\begin{example}
+  実数を成分とする$n$次正則行列全体からなる集合を$\GL(n,\RR)$とおく.
+  $X\in \GL(n,\RR)$に対し, その逆行列を対応させる
+  \begin{align*}
+    \shazo{\bullet^{-1}}
+          {\GL(n,\RR)}{\GL(n,\RR)}
+          {X}{X^{-1}}
+  \end{align*}
+  は$\GL(n,\RR)$上の単項演算である.
+  $X\in \GL(n,\RR)$に対し, その転置を対応させる
+  \begin{align*}
+    \shazo{\transposed{\bullet}}
+          {\GL(n,\RR)}{\GL(n,\RR)}
+          {X}{\transposed{X}}
+  \end{align*}
+  は$\GL(n,\RR)$上の単項演算である.
+  $X\in \GL(n,\RR)$に対し,
+  \begin{align*}
+    (\transposed{X})^{-1}=\transposed{(X^{-1})}
+  \end{align*}
+  であるので, この2つの単項演算は可換である.
+\end{example}
+\begin{definition}
+  次の条件を満たす$X$上の単項演算$f$をinvolutionと呼ぶ:
   全ての$x\in X$に対し,
   \begin{align*}
     f(f(x))=x.
@@ -215,12 +255,68 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
   $f$がinvolutionであるので, $\varphi\circ\varphi=\id_X$である.
   これは, $\varphi$が$\varphi$自身の逆写像であることを意味する.
 \end{proof}
+\begin{definition}
+  $f$を$X$上の単項演算とし,
+  $X'\subset X$とする.
+  つぎの条件をみたすとき,
+  $X'$は$f$について閉じているという:
+  \begin{enumerate}
+  \item $x\in X'\implies f(x)\in X'$,
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $f$を$X$上の単項演算とし,
+  $X'\subset X$とする.
+  $X'$は$f$について閉じているというのは,
+  $f$(の制限)は$X'$上の単項演算でもあるということである,
+\end{remark}
+\begin{example}
+  $\RR^\times = \QQ\setminus\Set{0}$とする.
+  このとき,
+  $x\in\RR^\times$に対しその逆数を対応させる
+  \begin{align*}
+    \shazo{\bullet^{-1}}
+          {\RR^{\times}}{\RR^{\times}}
+          {x}{x^{-1}}
+  \end{align*}
+  は$\RR^\times$上の単項演算である.
+
+  $x>0$に対し, $x^{-1}>0$であるので,
+  $\RR_{>0}$は$\bullet^{-1}$に関して閉じている.
+  つまり$\bullet^{-1}$は$\RR_{>0}$上の単項演算でもある.
+
+  $2$に対し, $0<2^{-1}<1$であり整数ではない.
+  したがって, $\ZZ_{>0}\subset \RR^{\times}$であるが,
+  $\ZZ_{>0}$は$\bullet^{-1}$に関して閉じていない.
+\end{example}
+
+$f$と$g$が可換であるとか,
+$f$がinvolutionであるといったものは,
+演算の性質であり,
+演算の閉じた部分集合でも自然にその性質は成り立つ.
+\begin{prop}
+  $f$と$g$を可換な
+  $X$上の単項演算とする.
+  $X'\subset X$は, $f$と$g$に関して閉じているとする.
+  このとき,
+  $X'$上の単項演算として, $f$と$g$は可換である.
+\end{prop}
+\begin{prop}
+  $f$を
+  $X$上の単項演算とする.
+  $f$はinvolutionであり,
+  $X'\subset X$は, $f$に関して閉じているとする.
+  このとき,
+  $X'$上の単項演算として,
+  $f$はinvolutionである.
+\end{prop}
+
+
 
 \section{二項演算}
 集合$X\times X'$から集合$Y$への写像を二項演算と呼んだ.
 特に, $X\times X$から$X$への写像を$X$上の二項演算と呼ぶ.
-また, $X\times Y$から$Y$への写像を$X$の$Y$への左作用と呼び,
-$Y\times X$から$Y$への写像を$X$の$Y$への右作用と呼ぶ.
+また, $X\times Y$から$Y$への写像を$X$の$Y$への作用と呼ぶ.
 $X$から$Y$への作用を考える際には,
 $X$や$Y$が代数系であることが多く,
 その場合にはそれらの演算と作用の整合性に関する条件が要請されることが多い.
@@ -247,7 +343,7 @@ $X$や$Y$が代数系であることが多く,
           {(a,x)}{ax}
   \end{align*}
   は二項演算である.
-  これは$\RR$の$\RR^n$への左作用である.
+  これは$\RR$の$\RR^n$への作用である.
 \end{example}
 
 \begin{example}
@@ -260,6 +356,78 @@ $X$や$Y$が代数系であることが多く,
   も二項演算である.
   これは$\RR^n$上の$\RR$-形式である.
 \end{example}
+
+\begin{definition}
+  $X$上の二項演算
+  \begin{align*}
+    \shazo{f}
+          {X\times X}{X}
+          {(x,y)}{f(x,y)}
+  \end{align*}
+  について考える.
+  $X'\subset X$が次の条件を満たすとき,
+  $X'$は$f$に関して閉じているという:
+  \begin{enumerate}
+  \item $x',y'\in X'\implies f(x',y')\in X'$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $f$を$X$上の二項演算とし,
+  $X'\subset X$とする.
+  $X'$は$f$について閉じているというのは,
+  $f$(の制限)は$X'$上の二項演算でもあるということである,
+\end{remark}
+
+
+
+\begin{definition}
+  $X$の$Y$上の作用
+  \begin{align*}
+    \shazo{f}
+          {X\times Y}{Y}
+          {(x,y)}{f(x,y)}
+  \end{align*}
+  について考える.
+  $Y'\subset Y$が次の条件を満たすとき,
+  $Y'$は$f$に関して閉じているという:
+  \begin{enumerate}
+  \item $x\in X$, $y\in Y\implies f(x,y)\in Y'$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $f$を$X$の$Y$上の作用とし,
+  $Y'\subset Y$とする.
+  $Y'$が$f$について閉じているというのは,
+  $f$(の制限)は$X$の$Y'$上の作用でもあるということである,
+\end{remark}
+
+
+\begin{definition}
+  $X$上の形式
+  \begin{align*}
+    \shazo{f}
+          {X\times X}{Y}
+          {(x,y)}{f(x,y)}
+  \end{align*}
+  について考える.
+  $X'\subset X$に対し,
+  その制限,
+  \begin{align*}
+    \shazo{f|_{X'\times X'}}
+          {X'\times X'}{Y}
+          {(x,y)}{f(x,y)}
+  \end{align*}
+  を$f$の$X'$への制限と呼ぶ.
+  文脈上問題ない場合には,
+  $f$の$X'$への制限も同じ記号$f$を使って表す.
+\end{definition}
+\begin{remark}
+  $f$を$X$上の$Y$-形式とし,
+  $X'\subset X$とする.
+  $f$の$X'$への制限は,
+  $X'$上の$Y$-形式である.
+\end{remark}
+
 
 \section{$X$上の二項演算に関する用語}
 ここでは, $X$上の二項関係に関して用いられる用語について
@@ -390,6 +558,23 @@ $\ZZ_{>0}$上の二項演算である.
   となるので, $[\bullet,\bullet]$は可換ではない.
 \end{nonexample}
 
+$\ast$が
+可換である
+というの演算自身の性質であり,
+その演算が閉じた部分集合でも自然に成り立つ.
+\begin{prop}
+  $\ast$は
+  可換
+  な
+  $X$上の二項演算とし,
+  $X'\subset X$は$\ast$に関して閉じているとする.
+  このとき,
+  $X'$上の二項演算として,
+  $\ast$は
+  可換
+  である.
+\end{prop}
+
 \subsection{結合律}
 ここでは,
 $\ast$を$X$上の中置記法の二項演算とする.
@@ -502,6 +687,23 @@ $\ZZ_{>0}$上の二項演算である.
   $a^n$と略記されることが多いように思う.
 \end{remark}
 
+$\ast$が
+結合的である
+というの演算自身の性質であり,
+その演算が閉じた部分集合でも自然に成り立つ.
+\begin{prop}
+  $\ast$は
+  結合的
+  な
+  $X$上の二項演算とし,
+  $X'\subset X$は$\ast$に関して閉じているとする.
+  このとき,
+  $X'$上の二項演算として,
+  $\ast$は
+  結合的
+  である.
+\end{prop}
+
 \subsection{単位元}
 ここでは,
 $\ast$を$X$上の中置記法の二項演算とする.
@@ -605,6 +807,80 @@ $\ast$を$X$上の中置記法の二項演算とする.
 \end{nonexample}
 
 
+$\ast$に関して閉じている部分集合を考えるとき,
+二項演算が単位元を持つかどうかは,
+考えている集合による.
+$\ast$が単位元をもっていたとしても,
+$\ast$に関して部分集合に単位元が存在しているかはわからない.
+しかし,
+単位元が満たしている条件自体は演算の性質であり,
+$\ast$の単位元が
+$\ast$に関して部分集合に含まれているなら,
+その元は単位元となる.
+\begin{prop}
+  $\ast$は
+  $X$上の二項演算とし,
+  $X'\subset X$は$\ast$に関して閉じているとする.
+  $e\in X$は左単位的であるとし,
+  $e\in X'$とする.
+  このとき,
+  $e$は,
+  $X'$上の二項演算$\ast$でも,
+  左単位的である.
+\end{prop}
+\begin{prop}
+  $\ast$は
+  $X$上の二項演算とし,
+  $X'\subset X$は$\ast$に関して閉じているとする.
+  $e\in X$は右単位的であるとし,
+  $e\in X'$とする.
+  このとき,
+  $e$は,
+  $X'$上の二項演算$\ast$でも,
+  右単位的である.
+\end{prop}
+\begin{prop}
+  \label{prop:unit:inher}
+  $\ast$は
+  $X$上の二項演算とし,
+  $e\in X$は$\ast$の単位元であるとする.
+  $X'\subset X$は$\ast$に関して閉じているとする.
+  $e\in X'$ならば,
+  $e$は,
+  $X'$上の二項演算としての
+  $\ast$の単位元である.
+\end{prop}
+\begin{remark}
+  $X$上の二項演算$\ast$が単位元をもつとし,
+  その単位元を$e$とする.
+  $X'\subset X$は$\ast$に関して閉じているととする.
+  $e\in X'$ならば,
+  \cref{prop:unit:inher}より,
+  $X'$上の二項演算$\ast$も単位元をもち,
+  その単位元は$e$である.
+  一方, $e\not\in X'$であっても,
+  $X'$上の二項演算$\ast$も単位元をもつことはある.
+  この場合,
+  その単位元を$e'$とすると
+  $e\neq e'$であり, $e'$は$X$上の演算$\ast$の単位元ではない.
+\end{remark}
+\begin{example}
+  $2$元集合$X=\Set{\top, \bot}$上の演算$\bullet\lor\bullet$を
+  \begin{align*}
+   {\top \lor \top} &= \top&
+   {\top \lor \bot} &= \top\\
+   {\bot \lor \top} &= \top&
+   {\bot \lor \bot} &= \bot    
+  \end{align*}
+  で定める.
+  このとき, $\bot$は$\lor$の単位元である.
+  $X'=\Set{\bot}$とおくと, $X'$は$\lor$に関して閉じている.
+  $\bot \in X'$であり, $\bot$は$X$上の演算$\lor$の単位元であったから,
+  $X'$上の演算としての$\lor$の単位元でもある.
+  $X''=\Set{\top}$とおくと, $X''$は$\lor$に関して閉じている.
+  $\bot\not\in X''$であるが,
+  $\top$は$X''$上の演算としての$\lor$の単位元である.
+\end{example}
 
 
 \subsection{逆元}
@@ -718,12 +994,55 @@ $\ast$が単位元$e$を持つとする.
   $-1$の逆元は$-1$である.
 \end{example}
 
+$\ast$に関して閉じている部分集合を考えるとき
+$x$が逆元を持つかどうかは
+考えている集合による.
+$x^{-1}$がもとの集合に存在していても,
+部分集合に存在しているかどうかはわからない.
+しかし,
+逆元が満たしている条件自体は演算の性質であり,
+もとの集合の単位元が含まれており,
+逆元が部分集合に含まれているなら,
+その元は逆元となる.
+\begin{prop}
+  $\ast$は
+  $X$上の二項演算とし,
+  $e\in X$は$\ast$の単位元であるとする.
+  $X'\subset X$は$\ast$に関して閉じており,
+  $e\in X'$とする.
+  $x\in X$の逆元$y\in X$が$y\in X'$をみたすなら,
+  $y$は,
+  $X'$上の二項演算としての
+  $x$の逆元である.
+\end{prop}
+\begin{prop}
+  $\ast$は
+  $X$上の二項演算とし,
+  $e\in X$は$\ast$の単位元であるとする.
+  $X'\subset X$は$\ast$に関して閉じており,
+  $e\in X'$とする.
+  $x\in X$の左逆元$y\in X$が$y\in X'$をみたすなら,
+  $y$は,
+  $X'$上の二項演算としての
+  $x$の左逆元である.
+\end{prop}
+\begin{prop}
+  $\ast$は
+  $X$上の二項演算とし,
+  $e\in X$は$\ast$の単位元であるとする.
+  $X'\subset X$は$\ast$に関して閉じており,
+  $e\in X'$とする.
+  $x\in X$の右逆元$y\in X$が$y\in X'$をみたすなら,
+  $y$は,
+  $X'$上の二項演算としての
+  $x$の右逆元である.
+\end{prop}
 
 
 \subsection{分配律}
 
-演算が閉じる.
-演算が閉じていれば成り立つ性質.
+
+
 
 \sectionX{章末問題}
 \begin{enumerate}
