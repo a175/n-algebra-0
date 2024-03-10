@@ -124,8 +124,6 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
           {(x,y)}{x+y}
   \end{align*}
   は二項演算である.
-  二項演算では, 演算を表す記号を中央に書く場合もある.
-  このような記法を中置記法と呼ぶ.
 \end{example}
 \begin{example}
   実ベクトル$x,y$に対し, その内積を対応させる
@@ -229,8 +227,46 @@ $X$や$Y$が代数系であることが多く,
 また, $X\times X$から$Y$への写像を$X$上の$Y$-形式と呼ぶことがある.
 この場合にもそれらの演算と作用の整合性に関する条件が要請されることが多い.
 
-\subsection{$X$上の二項演算}
-ここでは, $X$上の二項関係について考える.
+\begin{example}
+  実ベクトル$x,y$に対し, その和を対応させる
+  \begin{align*}
+    \shazo{\bullet+\bullet}
+          {\RR^n\times \RR^n}{\RR^n}
+          {(x,y)}{x+y}
+  \end{align*}
+  は$\RR^n$上の二項演算である.
+  二項演算では, 演算を表す記号を中央に書く場合もある.
+  このような記法を中置記法と呼ぶ.
+\end{example}
+
+\begin{example}
+ ベクトルのスカラー倍
+  \begin{align*}
+    \shazo{\bullet \cdot \bullet}
+          {\RR\times \RR^n}{\RR^n}
+          {(a,x)}{ax}
+  \end{align*}
+  は二項演算である.
+  これは$\RR$の$\RR^n$への左作用である.
+\end{example}
+
+\begin{example}
+  実ベクトル$x,y$に対し, その内積を対応させる
+  \begin{align*}
+    \shazo{\Braket{\bullet,\bullet}}
+          {\RR^n\times \RR^n}{\RR}
+          {(x,y)}{\Braket{x,y}}
+  \end{align*}
+  も二項演算である.
+  これは$\RR^n$上の$\RR$-形式である.
+\end{example}
+
+\section{$X$上の二項演算に関する用語}
+ここでは, $X$上の二項関係に関して用いられる用語について
+いくつか紹介する.
+
+\subsection{可換律}
+ここでは,
 $\ast$を$X$上の中置記法の二項演算とする.
 つまり
 \begin{align*}
@@ -238,9 +274,15 @@ $\ast$を$X$上の中置記法の二項演算とする.
         {X\times X}{X}
         {(x,y)}{x\ast y}
 \end{align*}
-について考える.
-
-\subsubsection{可換律}
+とする.
+\begin{definition}
+  $x,y\in X$が
+  次の条件を満たすとき,
+  $x$と$y$は可換であるという:
+  \begin{align*}
+    x\ast y=y\ast x.
+  \end{align*}
+\end{definition}
 \begin{definition}
   次の条件を満たすとき,
   $\ast$は可換律を満たすという:
@@ -348,7 +390,9 @@ $\ZZ_{>0}$上の二項演算である.
   となるので, $[\bullet,\bullet]$は可換ではない.
 \end{nonexample}
 
-\subsubsection{結合律}
+\subsection{結合律}
+ここでは,
+$\ast$を$X$上の中置記法の二項演算とする.
 \begin{definition}
   次の条件を満たすとき,
   $\ast$は結合律を満たすという:
@@ -458,24 +502,30 @@ $\ZZ_{>0}$上の二項演算である.
   $a^n$と略記されることが多いように思う.
 \end{remark}
 
-\subsubsection{単位元}
+\subsection{単位元}
+ここでは,
+$\ast$を$X$上の中置記法の二項演算とする.
 \begin{definition}
   $e\in X$とする.
-  
-  次の条件を満たすとき,
-  $e$は$\ast$に関し左単位的であるという:
   \begin{enumerate}
+  \item
+    次の条件を満たすとき,
+    $e$は$\ast$に関し左単位的であるという:
+    \begin{enumerate}
     \item $x\in X\implies e\ast x=x$.
-  \end{enumerate}
-  次の条件を満たすとき,
-  $e$は$\ast$に関し右単位的であるという:
-  \begin{enumerate}
+    \end{enumerate}
+  \item
+    次の条件を満たすとき,
+    $e$は$\ast$に関し右単位的であるという:
+    \begin{enumerate}
     \item $x\in X\implies x\ast e=x$.
+    \end{enumerate}
+  \item
+    $e$が,
+    $\ast$に関し左単位的かつ
+    $\ast$に関し右単位的であるとき,
+    $e$は$\ast$に関し単位的であるという.
   \end{enumerate}
-  $e$が,
-  $\ast$に関し左単位的かつ
-  $\ast$に関し右単位的であるとき,
-  $e$は$\ast$に関し単位的であるという.
 \end{definition}
 \begin{lemma}
   $e\in X$が左単位的であり,
@@ -546,98 +596,131 @@ $\ZZ_{>0}$上の二項演算である.
   また$1$も左単位的である.
 \end{example}
 
-\subsubsection{吸収元}
+\begin{nonexample}
+  $\ZZ_{>0}$上の和$+$について考える.
+  $x\in\ZZ_{>0}$とする.
+  このとき, 
+  $x+1>1$となるので$x+1=1$となることはない.
+  したがって, $+$の単位元は存在しない.
+\end{nonexample}
+
+
+
+
+\subsection{逆元}
+ここでは, $\ast$を$X$上の中置記法の二項演算とし,
+$\ast$が単位元$e$を持つとする.
 \begin{definition}
-  $e\in X$とする.
-  
-  次の条件を満たすとき,
-  $z$は$\ast$に関し左吸収的であるという:
+  $e\in X$は$\ast$の単位元であるとする.
+  $x\in X$とする.
   \begin{enumerate}
-    \item $x\in X\implies z\ast x=z$.
+  \item 次の条件を満たす$y$を$x$の左逆元と呼ぶ:
+    \begin{enumerate}
+      \item $y\ast x=e$.
+    \end{enumerate}
+  \item 次の条件を満たす$y$を$x$の右逆元と呼ぶ:
+    \begin{enumerate}
+      \item $x\ast y=e$.
+    \end{enumerate}
+  \item 次の条件を満たす$y$を$x$の逆元と呼ぶ:
+    \begin{enumerate}
+      \item $y\ast x=e$.
+    \item $x\ast y=e$.
+    \end{enumerate}  
   \end{enumerate}
-  次の条件を満たすとき,
-  $e$は$\ast$に関し右吸収的であるという:
-  \begin{enumerate}
-    \item $x\in X\implies x\ast z=x$.
-  \end{enumerate}
-  $z$が,
-  $\ast$に関し左吸収的かつ
-  $\ast$に関し右吸収的であるとき,
-  $z$は$\ast$に関し吸収的であるという.
+  逆元をもつ$x\in X$を可逆元と呼ぶことがある.
 \end{definition}
 
 \begin{lemma}
-  $z\in X$が左吸収的であり,
-  $z'\in X$が右吸収的であるなら,
-  $z=z'$,
+  $\ast$は結合的であるとし,
+  $x\in X$とする.
+  $y\in X$が$x$の左逆元であり,
+  $y'\in X$が$x$の右逆元であり,
+  $y=y'$.
 \end{lemma}
 \begin{proof}
-  $z\ast z'$について考える.
-  $z$は左吸収的であるので, $z\ast z'=z$.
-  $z'$は右吸収的であるので, $z\ast z'=z'$.
-  したがって, $z=z'$.
+  $\ast$の単位元を$e$とする.
+  $y$は$x$の左単位元であるので,
+  $(y\ast x) \ast y'=e\ast y'=y'$.
+  $y$は$x$の右単位元であるので,
+  $y\ast (x \ast y')=y\ast e=y$.
+  $\ast$は結合的なので,
+  $(y\ast x) \ast y'=y\ast (x \ast y')$.
+  したがって, $y=y'$.
 \end{proof}
 \begin{cor}
-\label{cor:uniq:absorbinelm}
-  $e\in X$, $e'\in X$が単位的なら,
-  $e=e'$.
+\label{cor:uniq:inv}
+  $\ast$は結合的であるとし,
+  $x\in X$とする.
+  $y\in X$, $y'\in X$が$x$の逆元なら,
+  $y=y'$.
 \end{cor}
 \begin{remark}
-  \Cref{cor:uniq:absorbinelm}により,
-  吸収的な元は存在するなら, ただ一つであることがわかる.
-  吸収的な元を (もし存在するなら)
-  $\ast$の吸収元(absorbing elment)と呼ぶ.
-
-  代数系によっては, 吸収元のことを零元と呼ぶもあるが,
-  加法単位元のことを零元と呼ぶ代数系のほうが多いように思う.
+  $\ast$が結合的であるとき,
+  \Cref{cor:uniq:inv}により,
+  $x\in X$の逆元は, 存在するなら, $x\in X$に対して,
+  ただ一つであることがわかる.
+  そこで, $x\in X$の逆元を$x$を用いて表すことが多い.
+  $\ast$が和と呼ばれるときには,
+  $x$の逆元は$-x$のような記号が用いられることが
+  多く,
+  $\ast$が積と呼ばれるときには, 
+  $x$の逆元は$x^{-1}$のような記号が用いられることが
+  多いように思う.
 \end{remark}
 \begin{cor}
-  右吸収元と左吸収元が存在するなら,
-  それらは一致し$\ast$の吸収元である.
+  $\ast$は結合的であるとする.
+  $x\in X$の右逆元と左逆元が存在するなら,
+  それらは一致し$x$の逆元である.
 \end{cor}
 \begin{cor}
-  $\ast$の吸収元が存在するとする.
+  $\ast$は結合的であるとし,
+  $x\in X$とする.
+  $x$の逆元が存在するとする.
   \begin{enumerate}
-  \item 左吸収的な元は, $\ast$の吸収元である.
-  \item 右吸収的な元は, $\ast$の吸収元である.
+  \item $x$の左逆元は, $x$の逆元である.
+  \item $x$の右逆元は, $x$の逆元である.
   \end{enumerate}
 \end{cor}
 \begin{cor}
-  $\ast$は可換な二項演算であるとする.
+  $\ast$は結合的かつ可換律を満たす二項演算であるとし,
+  $x\in X$とする.
   \begin{enumerate}
-  \item 左吸収的な元は, $\ast$の吸収元である.
-  \item 右吸収的な元は, $\ast$の吸収元である.
+  \item $x$の右逆元は, $x$の逆元である.
+  \item $x$の右逆元は, $x$の逆元である.
   \end{enumerate}
 \end{cor}
 \begin{example}
-  $\ZZ_{\geq 0}$における通常の積$\cdot$を考える.
-  $0$は$\cdot$に関する吸収元である.
+  $\ZZ$上の通常の和を考える.
+  このとき, $0$は$+$の単位元である.
+  どの$x\in \ZZ$も逆元を持ち,
+  $x$の逆元はその$-1$倍の$-x$である.
 \end{example}
 \begin{example}
-  $x,y\in\RR_{\geq 0}$
-  に対し, $\min(x,y)$を
-  $x$と$y$の小さい方とする.
-  このとき, $\min$は
-  $\RR_{\geq 0}$上の二項演算である.
-  $0$は$\min$に関する吸収元である.
+  $\QQ$上の通常の積を考える.
+  このとき, $1$は$\cdot$の単位元である.
+  どの$x\in\QQ$に対しても$0x=0$であり,
+  $0x=1$となることはない.
+  したがって$0$の逆元はない.
+  $0$以外の$x\in \QQ$は逆元を持ち,
+  $x$の逆元はその逆数$\frac{1}{x}$である.
 \end{example}
-
 \begin{example}
-  二点集合$\Set{0,1}$上の演算$\rhd$
-  を
-  \begin{align*}
-    0\rhd 0 &= 0&
-    0\rhd 1 &= 1\\
-    1\rhd 0 &= 0&
-    1\rhd 1 &= 1
-  \end{align*}
-  で定義する.
-  このとき, $0$は右吸収的である.
-  また$1$も右吸収的である.
+  $\ZZ$上の通常の積を考える.
+  このとき, $1$は$\cdot$の単位元である.
+  $0\in\ZZ$は逆元を持たない.
+  また, $x>1$に対して,
+  $0<\frac{1}{x}<1$であるので,
+  $\frac{1}{x}\not\in \ZZ$である.
+  したがって, $x>1$ならば$x\in\ZZ$は逆元を持たない.
+  同様に, $x<-1$ならば$x\in \ZZ$は逆元を持たない.
+  $1$の逆元は$1$であり,
+  $-1$の逆元は$-1$である.
 \end{example}
 
 
-\section{逆元}
+
+\subsection{分配律}
 
 \sectionX{章末問題}
 \begin{enumerate}
@@ -649,3 +732,4 @@ $\ZZ_{>0}$上の二項演算である.
 
 
 
+    

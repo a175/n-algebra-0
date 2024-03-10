@@ -1,0 +1,118 @@
+\section{$X$上の二項演算の続き}
+ここでは, $X$上の二項関係に関して用いられる用語について
+いくつか紹介する.
+以下では,
+$\ast$を$X$上の中置記法の二項演算とする.
+つまり
+\begin{align*}
+  \shazo{\bullet\ast\bullet}
+        {X\times X}{X}
+        {(x,y)}{x\ast y}
+\end{align*}
+とする.
+
+\subsection{吸収元}
+\begin{definition}
+  $e\in X$とする.
+  \begin{enumerate}
+  \item
+    次の条件を満たすとき,
+    $z$は$\ast$に関し左吸収的であるという:
+    \begin{enumerate}
+    \item $x\in X\implies z\ast x=z$.
+    \end{enumerate}
+  \item
+    次の条件を満たすとき,
+    $e$は$\ast$に関し右吸収的であるという:
+    \begin{enumerate}
+    \item $x\in X\implies x\ast z=x$.
+    \end{enumerate}
+  \item
+    $z$が,
+    $\ast$に関し左吸収的かつ
+    $\ast$に関し右吸収的であるとき,
+    $z$は$\ast$に関し吸収的であるという.
+  \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+  $z\in X$が左吸収的であり,
+  $z'\in X$が右吸収的であるなら,
+  $z=z'$,
+\end{lemma}
+\begin{proof}
+  $z\ast z'$について考える.
+  $z$は左吸収的であるので, $z\ast z'=z$.
+  $z'$は右吸収的であるので, $z\ast z'=z'$.
+  したがって, $z=z'$.
+\end{proof}
+\begin{cor}
+\label{cor:uniq:absorbinelm}
+  $e\in X$, $e'\in X$が単位的なら,
+  $e=e'$.
+\end{cor}
+\begin{remark}
+  \Cref{cor:uniq:absorbinelm}により,
+  吸収的な元は存在するなら, ただ一つであることがわかる.
+  吸収的な元を (もし存在するなら)
+  $\ast$の吸収元(absorbing elment)と呼ぶ.
+
+  代数系によっては, 吸収元のことを零元と呼ぶもあるが,
+  加法単位元のことを零元と呼ぶ代数系のほうが多いように思う.
+\end{remark}
+\begin{cor}
+  右吸収元と左吸収元が存在するなら,
+  それらは一致し$\ast$の吸収元である.
+\end{cor}
+\begin{cor}
+  $\ast$の吸収元が存在するとする.
+  \begin{enumerate}
+  \item 左吸収的な元は, $\ast$の吸収元である.
+  \item 右吸収的な元は, $\ast$の吸収元である.
+  \end{enumerate}
+\end{cor}
+\begin{cor}
+  $\ast$は可換な二項演算であるとする.
+  \begin{enumerate}
+  \item 左吸収的な元は, $\ast$の吸収元である.
+  \item 右吸収的な元は, $\ast$の吸収元である.
+  \end{enumerate}
+\end{cor}
+\begin{example}
+  $\ZZ_{\geq 0}$における通常の積$\cdot$を考える.
+  $0$は$\cdot$に関する吸収元である.
+\end{example}
+\begin{example}
+  $x,y\in\RR_{\geq 0}$
+  に対し, $\min(x,y)$を
+  $x$と$y$の小さい方とする.
+  このとき, $\min$は
+  $\RR_{\geq 0}$上の二項演算である.
+  $0$は$\min$に関する吸収元である.
+\end{example}
+
+\begin{example}
+  二点集合$\Set{0,1}$上の演算$\rhd$
+  を
+  \begin{align*}
+    0\rhd 0 &= 0&
+    0\rhd 1 &= 1\\
+    1\rhd 0 &= 0&
+    1\rhd 1 &= 1
+  \end{align*}
+  で定義する.
+  このとき, $0$は右吸収的である.
+  また$1$も右吸収的である.
+\end{example}
+
+
+\begin{nonexample}
+  $\ZZ_{>0}$上の積$\cdot$について考える.
+  $x\in\ZZ_{>0}$とする.
+  このとき, $2\cdot x>x$であるので,
+  $2\cdot x=x$となることはない.
+  したがって, $\cdot$の吸収元は存在しない.
+\end{nonexample}
+
+
+\subsection{冪等元}
