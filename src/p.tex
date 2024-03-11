@@ -167,7 +167,6 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 定数を与えるという言い回しのほうが平易であるため,
 通常は$0$項演算という用語はあまり用いられないように思う.
 
-
 \section{単項演算}
 集合$X$から集合$Y$への写像を単項演算と呼んだ.
 特に, $X$から$X$への写像を$X$上の単項演算と呼ぶ.
@@ -293,7 +292,7 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 $f$と$g$が可換であるとか,
 $f$がinvolutionであるといったものは,
 演算の性質であり,
-演算の閉じた部分集合でも自然にその性質は成り立つ.
+その演算に関して閉じた部分集合でも自然にその性質は成り立つ.
 \begin{prop}
   $f$と$g$を可換な
   $X$上の単項演算とする.
@@ -317,11 +316,13 @@ $f$がinvolutionであるといったものは,
 集合$X\times X'$から集合$Y$への写像を二項演算と呼んだ.
 特に, $X\times X$から$X$への写像を$X$上の二項演算と呼ぶ.
 また, $X\times Y$から$Y$への写像を$X$の$Y$への作用と呼ぶ.
-$X$から$Y$への作用を考える際には,
+$X$の$Y$への作用を考える際には,
 $X$や$Y$が代数系であることが多く,
 その場合にはそれらの演算と作用の整合性に関する条件が要請されることが多い.
 また, $X\times X$から$Y$への写像を$X$上の$Y$-形式と呼ぶことがある.
 この場合にもそれらの演算と作用の整合性に関する条件が要請されることが多い.
+また, この定義では, $X$上の二項演算は, $X$の$X$への作用でもあり,
+$X$上の$X$-形式でもある.
 
 \begin{example}
   実ベクトル$x,y$に対し, その和を対応させる
@@ -575,6 +576,47 @@ $\ast$が
   である.
 \end{prop}
 
+$X$上の二項演算について可換であるということを
+定義したが,
+より一般に$X$上の$Y$-形式についても,
+定義できる.
+
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \shazo{\bullet\ast\bullet}
+          {X\times X}{Y}
+          {(x,y)}{x\ast y}
+  \end{align*}
+  に対し,
+  $x,y\in X$が
+  次の条件を満たすとき,
+  $x$と$y$は可換であるという:
+  \begin{align*}
+    x\ast y=y\ast x.
+  \end{align*}
+\end{definition}
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \shazo{\bullet\ast\bullet}
+          {X\times X}{Y}
+          {(x,y)}{x\ast y}
+  \end{align*}
+  に対し,
+  次の条件を満たすとき,
+  $\ast$は可換律を満たすという:
+  \begin{align*}
+    x,y\in X\implies x\ast y=y\ast x.
+  \end{align*}
+\end{definition}
+\begin{remark}
+  $\ast$が可換律を満たすことを,
+  $\ast$が可換であるともいう,
+  また$\ast$が対称であるともいう,
+\end{remark}
+
+
 \subsection{結合律}
 ここでは,
 $\ast$を$X$上の中置記法の二項演算とする.
@@ -703,6 +745,8 @@ $\ast$が
   結合的
   である.
 \end{prop}
+
+
 
 \subsection{単位元}
 ここでは,
@@ -882,6 +926,23 @@ $\ast$に関して部分集合に含まれているなら,
   $\top$は$X''$上の演算としての$\lor$の単位元である.
 \end{example}
 
+\subsection{単位元}
+$X$上の二項演算に関して単位的な元というものを定義したが,
+これは, $X$の$Y$上の作用でも定義できる.
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \shazo{\bullet\ast\bullet}
+          {X\times Y}{Y}
+          {(x,y)}{x\ast y}
+  \end{align*}
+  に対し,
+  $e\in X$が次の条件を満たすとき,
+  $e$は$\ast$に関し左単位的であるという:
+  \begin{enumerate}
+  \item $x\in X\implies e\ast x=x$.
+  \end{enumerate}
+\end{definition}
 
 \subsection{逆元}
 ここでは, $\ast$を$X$上の中置記法の二項演算とし,
@@ -1042,8 +1103,11 @@ $x^{-1}$がもとの集合に存在していても,
 \subsection{分配律}
 
 
-
-
+\chapter{代数系}
+\section{いくつかの代数系の定義}
+\section{群}
+\section{環}
+\section{体}
 \sectionX{章末問題}
 \begin{enumerate}
 \item 可換かつ結合的な二項演算の例を挙げよ.
