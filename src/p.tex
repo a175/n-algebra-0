@@ -315,7 +315,8 @@ $f$がinvolutionであるといったものは,
 \section{二項演算}
 集合$X\times X'$から集合$Y$への写像を二項演算と呼んだ.
 特に, $X\times X$から$X$への写像を$X$上の二項演算と呼ぶ.
-また, $X\times Y$から$Y$への写像を$X$の$Y$への作用と呼ぶ.
+また, $X\times Y$から$Y$への写像や,
+ $Y\times X$から$Y$への写像を$X$の$Y$への作用と呼ぶ.
 $X$の$Y$への作用を考える際には,
 $X$や$Y$が代数系であることが多く,
 その場合にはそれらの演算と作用の整合性に関する条件が要請されることが多い.
@@ -1100,6 +1101,152 @@ $x^{-1}$がもとの集合に存在していても,
 
 
 \subsection{分配律}
+ここでは, $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
+\begin{definition}
+  $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
+  \begin{enumerate}
+  \item 次の条件を満たすとき,
+    $\ast$は$\diamond$に対し左分配的であるという:
+    \begin{enumerate}
+      \item $x,y,z\in X \implies x\ast (y\diamond z)=(x\ast y)\diamond (x\ast z)$.
+    \end{enumerate}
+  \item 次の条件を満たすとき,
+    $\ast$は$\diamond$に対し右分配的であるという:
+    \begin{enumerate}
+      \item $x,y,z\in X \implies (y\diamond z) \ast x=(y\ast x)\diamond (z\ast x)$.
+    \end{enumerate}
+  \item 
+    $\ast$が$\diamond$に対し左分配的かつ右分配的であるとき,
+    $\ast$は$\diamond$に対し分配的であるという.
+  \end{enumerate}
+\end{definition}
+
+\begin{cor}
+  $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
+  $\ast$が可換であり,
+  $\ast$は$\diamond$に対し左分配的なら,
+  $\ast$は$\diamond$に対し分配的であるという.
+\end{cor}
+\begin{cor}
+  $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
+  $\ast$が可換であり,
+  $\ast$は$\diamond$に対し右分配的なら,
+  $\ast$は$\diamond$に対し分配的であるという.
+\end{cor}
+\begin{example}
+  $\ZZ$上の通常の和$+$と積$\cdot$を考える.
+  このとき, 和は積に対して分配的である.
+  一方
+  \begin{align*}
+    (1\cdot 1)+1&=2,\\
+    (1+1)\cdot(1+1)&=4
+  \end{align*}
+  であるので, 積は和に対して分配的ではない.
+\end{example}
+\begin{example}
+  $\Omega$を集合とし,
+  $\Omega$の冪集合を
+  $X$とする.
+  このとき,
+  $\cup$と$\cap$は$X$上の二項演算である.
+  このとき,
+  $\cap$は$\cup$に対して分配的である.
+  また,
+  $\cup$は$\cap$に対して分配的である.
+\end{example}
+
+$\ast$が$\diamond$に対して分配的であるかどうかは,
+演算自身の性質であり,
+その演算が閉じた部分集合でも自然に
+成り立つ .
+\begin{prop}
+  $\ast$, $\diamond$を$X$上の二項演算で,
+  $\ast$は$\diamond$に対し左分配的であるとする.
+  $X'\subset X$は$\ast$, $\diamond$に関し閉じているとする.
+  このとき,
+  $X'$上の二項演算として,
+  $\ast$は$\diamond$に対し左分配的である.
+\end{prop}
+\begin{prop}
+  $\ast$, $\diamond$を$X$上の二項演算で,
+  $\ast$は$\diamond$に対し右分配的であるとする.
+  $X'\subset X$は$\ast$, $\diamond$に関し閉じているとする.
+  このとき,
+  $X'$上の二項演算として,
+  $\ast$は$\diamond$に対し右分配的である.
+\end{prop}
+\begin{prop}
+  $\ast$, $\diamond$を$X$上の二項演算で,
+  $\ast$は$\diamond$に対し分配的であるとする.
+  $X'\subset X$は$\ast$, $\diamond$に関し閉じているとする.
+  このとき,
+  $X'$上の二項演算として,
+  $\ast$は$\diamond$に対し分配的である.
+\end{prop}
+
+$X$上の二項演算について分配的であるということを定義したが,
+より一般に$X$の$Y$上の作用についても, 定義できる.
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \bullet \ast \bullet &\colon
+    \Shazo{X\times Y}{Y}{(x,y)}{x\ast y}\\
+    \bullet \diamond \bullet &\colon
+    \Shazo{Y\times Y}{Y}{(y,y')}{y\diamond y'}
+  \end{align*}
+  に対し,
+  次の条件を満たすとき,
+  $\ast$は$\diamond$に対し左分配的であるという:
+  \begin{enumerate}
+  \item $x\in X$, $y,y'\in Y \implies x\ast (y\diamond y')=(x\ast y)\diamond (x\ast y')$.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \bullet \ast \bullet &\colon
+    \Shazo{X\times X}{X}{(x,x')}{x\ast x'}\\
+    \bullet \diamond \bullet &\colon
+    \Shazo{X\times Y}{Y}{(x,y)}{x\diamond y}
+  \end{align*}
+  に対し,
+  次の条件を満たすとき,
+  $\diamond$は$\ast$に対し右分配的であるという:
+  \begin{enumerate}
+  \item $x,x'\in X$, $y\in Y \implies (x\ast x')\diamond y=(x\ast y)\diamond (x'\ast y)$.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \bullet \ast \bullet &\colon
+    \Shazo{X\times Y}{X}{(x,y)}{x\ast y}\\
+    \bullet \diamond \bullet &\colon
+    \Shazo{Y\times Y}{Y}{(y,y')}{y\diamond y'}
+  \end{align*}
+  に対し,
+  次の条件を満たすとき,
+  $\ast$は$\diamond$に対し左分配的であるという:
+  \begin{enumerate}
+  \item $x\in X$, $y,y'\in Y \implies x\ast (y\diamond y')=(x\ast y)\diamond (x\ast y')$.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  二項演算
+  \begin{align*}
+    \bullet \ast \bullet &\colon
+    \Shazo{X\times X}{X}{(x,x')}{x\ast x'}\\
+    \bullet \diamond \bullet &\colon
+    \Shazo{X\times Y}{X}{(x,y)}{x\diamond y}
+  \end{align*}
+  に対し,
+  次の条件を満たすとき,
+  $\diamond$は$\ast$に対し右分配的であるという:
+  \begin{enumerate}
+  \item $x,x'\in X$, $y\in Y \implies (x\ast x')\diamond y=(x\ast y)\diamond (x'\ast y)$.
+  \end{enumerate}
+\end{definition}
+
 
 
 \chapter{代数系}
