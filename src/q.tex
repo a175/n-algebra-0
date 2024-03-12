@@ -1,7 +1,6 @@
 \chapter{二項演算}
 \section{二項演算の用語の図式による表記}
 \section{二項演算の用語について}
-\subsection{吸収元}
 ここでは, $X$上の二項関係に関して用いられる用語について
 いくつか紹介する.
 以下では,
@@ -13,6 +12,7 @@ $\ast$を$X$上の中置記法の二項演算とする.
         {(x,y)}{x\ast y}
 \end{align*}
 とする.
+\subsection{吸収元}
 \begin{definition}
   $e\in X$とする.
   \begin{enumerate}
@@ -117,3 +117,30 @@ $\ast$を$X$上の中置記法の二項演算とする.
 
 
 \subsection{冪等元}
+\begin{definition}
+    次の条件を満たすとき,
+    $c\in X$を冪等元と呼ぶ:
+    \begin{enumerate}
+    \item $c\ast c=c$.
+    \end{enumerate}
+    すべての元が冪等元であるとき,
+    マグマ$(X,\ast)$は冪等であるという.
+\end{definition}
+
+\begin{example}
+  $\ast$の単位元$e$は冪等元である.
+\end{example}
+\begin{example}
+  吸収的な元$z$は冪等元である.
+\end{example}
+\begin{example}
+  $X$を実数を成分とする二次正方行列全体からなる集合とする.
+  行列の積$\cdot$は$X$上の二項演算である.
+  \begin{align*}
+    &\begin{pmatrix}1&0\\0&0\end{pmatrix},
+     & &\begin{pmatrix}0&0\\0&1\end{pmatrix}
+  \end{align*}
+  は冪等元である.
+\end{example}
+
+\subsection{単位的}
