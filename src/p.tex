@@ -1,5 +1,10 @@
 % !TeX root =./x2.tex
 % !TeX program = pdfpLaTeX
+
+\newcommand{\tofu}{{\bullet}}
+%\newcommand{\lxor}{\veebar}
+\newcommand{\lxor}{\oplus}
+
 \chapter{演算}
 \section{演算について}
 集合$X$と集合$Y$が与えられているとする.
@@ -68,20 +73,20 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   正の実数$x$に対し, その逆数を対応させる
   \begin{align*}
-    \shazo{\bullet^{-1}}
+    \shazo{\tofu^{-1}}
           {\RR}{\RR}
           {x}{\frac{1}{x}}
   \end{align*}
   も単項演算である.
   ${}^{-1}$だけでは, どこに実数$x$を代入すればよいかわかりにくいため,
   代入する部分をはっきりさせるため,
-  $\bullet^{-1}$とここでは書いている.
+  $\tofu^{-1}$とここでは書いている.
   このように, 先頭以外に演算を表す記号を書くこともある.
 \end{example}
 \begin{example}
   実数$x$に対し, その絶対値を対応させる
   \begin{align*}
-    \shazo{|\bullet|}
+    \shazo{|\tofu|}
           {\RR}{\RR}
           {x}{\begin{cases}x&(x\geq 0)\\-x&(x<0)\end{cases}}
   \end{align*}
@@ -91,7 +96,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   非負整数$x$に対し, その階乗を対応させる
   \begin{align*}
-    \shazo{\bullet !}
+    \shazo{\tofu !}
           {\NN}{\NN}
           {x}{x(x-1)(x-2)\cdots 1}
   \end{align*}
@@ -101,7 +106,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   複素数$x$に対し, その複素共軛を対応させる
   \begin{align*}
-    \shazo{\bar\bullet }
+    \shazo{\bar\tofu }
           {\CC}{\CC}
           {x}{\bar{x}}
   \end{align*}
@@ -110,7 +115,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   非負実数$x$に対し, その平方根を対応させる
   \begin{align*}
-    \shazo{\sqrt\bullet }
+    \shazo{\sqrt\tofu }
           {\RR_{>0}}{\RR}
           {x}{\sqrt{x}}
   \end{align*}
@@ -119,7 +124,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   整数$x,y$に対し, その和を対応させる
   \begin{align*}
-    \shazo{\bullet+\bullet}
+    \shazo{\tofu+\tofu}
           {\ZZ\times \ZZ}{\ZZ}
           {(x,y)}{x+y}
   \end{align*}
@@ -128,7 +133,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
 \begin{example}
   実ベクトル$x,y$に対し, その内積を対応させる
   \begin{align*}
-    \shazo{\Braket{\bullet,\bullet}}
+    \shazo{\Braket{\tofu,\tofu}}
           {\RR^n\times \RR^n}{\RR}
           {(x,y)}{\Braket{x,y}}
   \end{align*}
@@ -140,7 +145,7 @@ $X$の元から$Y$を作る`操作'としての側面を意識しているとき
   実数$x$と非負整数$n$に対し,
   二項係数を対応させる
   \begin{align*}
-    \shazo{\binom{\bullet}{\bullet}}
+    \shazo{\binom{\tofu}{\tofu}}
           {\RR\times \NN}{\RR}
           {(x,n)}{\frac{x(x-1)\cdots(x-n+1)}{n!}}
   \end{align*}
@@ -178,14 +183,14 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
   実数を成分とする$n$次正則行列全体からなる集合を$\GL(n,\RR)$とおく.
   $X\in \GL(n,\RR)$に対し, その逆行列を対応させる
   \begin{align*}
-    \shazo{\bullet^{-1}}
+    \shazo{\tofu^{-1}}
           {\GL(n,\RR)}{\GL(n,\RR)}
           {X}{X^{-1}}
   \end{align*}
   は$\GL(n,\RR)$上の単項演算である.
   $X\in \GL(n,\RR)$に対し, その転置を対応させる
   \begin{align*}
-    \shazo{\transposed{\bullet}}
+    \shazo{\transposed{\tofu}}
           {\GL(n,\RR)}{\GL(n,\RR)}
           {X}{\transposed{X}}
   \end{align*}
@@ -206,7 +211,7 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 \begin{example}
   実数$x$に対し, その$-1$倍を対応させる
   \begin{align*}
-    \shazo{-\bullet}
+    \shazo{-\tofu}
           {\RR}{\RR}
           {x}{-x}
   \end{align*}
@@ -217,7 +222,7 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 \begin{example}
   正の実数$x$に対し, その逆数を対応させる
   \begin{align*}
-    \shazo{\bullet^{-1}}
+    \shazo{\tofu^{-1}}
           {\RR_{>0}}{\RR_{>0}}
           {x}{x^{-1}}
   \end{align*}
@@ -228,7 +233,7 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
 \begin{example}
   正の実数$x$に対し, その平方根を対応させる
   \begin{align*}
-    \shazo{\sqrt{\bullet}}
+    \shazo{\sqrt{\tofu}}
           {\RR_{>0}}{\RR_{>0}}
           {x}{\sqrt{x}}
   \end{align*}
@@ -270,19 +275,19 @@ $\star$の像となる$Y$の元を一つ指定することに他ならないか�
   このとき,
   $x\in\RR^\times$に対しその逆数を対応させる
   \begin{align*}
-    \shazo{\bullet^{-1}}
+    \shazo{\tofu^{-1}}
           {\RR^{\times}}{\RR^{\times}}
           {x}{x^{-1}}
   \end{align*}
   は$\RR^\times$上の単項演算である.
 
   $x>0$に対し, $x^{-1}>0$であるので,
-  $\RR_{>0}$は$\bullet^{-1}$に関して閉じている.
-  つまり$\bullet^{-1}$は$\RR_{>0}$上の単項演算でもある.
+  $\RR_{>0}$は$\tofu^{-1}$に関して閉じている.
+  つまり$\tofu^{-1}$は$\RR_{>0}$上の単項演算でもある.
 
   $2$に対し, $0<2^{-1}<1$であり整数ではない.
   したがって, $\ZZ_{>0}\subset \RR^{\times}$であるが,
-  $\ZZ_{>0}$は$\bullet^{-1}$に関して閉じていない.
+  $\ZZ_{>0}$は$\tofu^{-1}$に関して閉じていない.
 \end{example}
 
 $f$と$g$が可換であるとか,
@@ -324,7 +329,7 @@ $X$上の$X$-形式でもある.
 \begin{example}
   実ベクトル$x,y$に対し, その和を対応させる
   \begin{align*}
-    \shazo{\bullet+\bullet}
+    \shazo{\tofu+\tofu}
           {\RR^n\times \RR^n}{\RR^n}
           {(x,y)}{x+y}
   \end{align*}
@@ -336,7 +341,7 @@ $X$上の$X$-形式でもある.
 \begin{example}
  ベクトルのスカラー倍
   \begin{align*}
-    \shazo{\bullet \cdot \bullet}
+    \shazo{\tofu \cdot \tofu}
           {\RR\times \RR^n}{\RR^n}
           {(a,x)}{ax}
   \end{align*}
@@ -347,7 +352,7 @@ $X$上の$X$-形式でもある.
 \begin{example}
   実ベクトル$x,y$に対し, その内積を対応させる
   \begin{align*}
-    \shazo{\Braket{\bullet,\bullet}}
+    \shazo{\Braket{\tofu,\tofu}}
           {\RR^n\times \RR^n}{\RR}
           {(x,y)}{\Braket{x,y}}
   \end{align*}
@@ -436,7 +441,7 @@ $X$上の$X$-形式でもある.
 $\ast$を$X$上の中置記法の二項演算とする.
 つまり
 \begin{align*}
-  \shazo{\bullet\ast\bullet}
+  \shazo{\tofu\ast\tofu}
         {X\times X}{X}
         {(x,y)}{x\ast y}
 \end{align*}
@@ -472,7 +477,7 @@ $\ast$を$X$上の中置記法の二項演算とする.
 \end{example}
 \begin{nonexample}
 \begin{align*}
-  \shazo{\bullet^\bullet}
+  \shazo{\tofu^\tofu}
         {\ZZ_{>0}\times \ZZ_{>0}}{\ZZ_{>0}}
         {(x,y)}{x^y}
 \end{align*}
@@ -521,7 +526,7 @@ $\ZZ_{>0}$上の二項演算である.
     [A,B]=AB-BA
   \end{align*}
   とおくと,
-  $[\bullet,\bullet]$は,
+  $[\tofu,\tofu]$は,
   $n$次正方行列上の二項演算である.
   この演算をリー・ブラケットと呼ぶ.
   \begin{align*}
@@ -553,7 +558,7 @@ $\ZZ_{>0}$上の二項演算である.
       -1&0\\0&1
     \end{pmatrix}
   \end{align*}
-  となるので, $[\bullet,\bullet]$は可換ではない.
+  となるので, $[\tofu,\tofu]$は可換ではない.
 \end{nonexample}
 
 $\ast$が
@@ -581,7 +586,7 @@ $X$上の二項演算について可換であるということを
 \begin{definition}
   二項演算
   \begin{align*}
-    \shazo{\bullet\ast\bullet}
+    \shazo{\tofu\ast\tofu}
           {X\times X}{Y}
           {(x,y)}{x\ast y}
   \end{align*}
@@ -596,7 +601,7 @@ $X$上の二項演算について可換であるということを
 \begin{definition}
   二項演算
   \begin{align*}
-    \shazo{\bullet\ast\bullet}
+    \shazo{\tofu\ast\tofu}
           {X\times X}{Y}
           {(x,y)}{x\ast y}
   \end{align*}
@@ -635,7 +640,7 @@ $\ast$を$X$上の中置記法の二項演算とする.
 \end{example}
 \begin{nonexample}
 \begin{align*}
-  \shazo{\bullet^\bullet}
+  \shazo{\tofu^\tofu}
         {\ZZ_{>0}\times \ZZ_{>0}}{\ZZ_{>0}}
         {(x,y)}{x^y}
 \end{align*}
@@ -668,7 +673,7 @@ $\ZZ_{>0}$上の二項演算である.
   となるので, リー・ブラケットは結合的ではない.
 \end{nonexample}
 \begin{nonexample}
-  $2$元集合$X=\Set{\top, \bot}$上の演算$\overline{\bullet\lor\bullet}$を
+  $2$元集合$X=\Set{\top, \bot}$上の演算$\overline{\tofu\lor\tofu}$を
   \begin{align*}
     \overline{\top \lor \top} &= \bot&
     \overline{\top \lor \bot} &= \bot\\
@@ -787,6 +792,7 @@ $\ast$を$X$上の中置記法の二項演算とする.
   $e=e'$.
 \end{cor}
 \begin{remark}
+  \label{rem:uniq:unit}
   \Cref{cor:uniq:unit}により,
   単位的な元は存在するなら, ただ一つであることがわかる.
   単位的な元を (もし存在するなら)
@@ -906,7 +912,7 @@ $\ast$に関して部分集合に含まれているなら,
   $e\neq e'$であり, $e'$は$X$上の演算$\ast$の単位元ではない.
 \end{remark}
 \begin{example}
-  $2$元集合$X=\Set{\top, \bot}$上の演算$\bullet\lor\bullet$を
+  $2$元集合$X=\Set{\top, \bot}$上の演算$\tofu\lor\tofu$を
   \begin{align*}
    {\top \lor \top} &= \top&
    {\top \lor \bot} &= \top\\
@@ -928,7 +934,7 @@ $X$上の二項演算に関して単位的な元というものを定義した�
 \begin{definition}
   二項演算
   \begin{align*}
-    \shazo{\bullet\ast\bullet}
+    \shazo{\tofu\ast\tofu}
           {X\times Y}{Y}
           {(x,y)}{x\ast y}
   \end{align*}
@@ -1185,9 +1191,9 @@ $X$上の二項演算について分配的であるということを定義し�
 \begin{definition}
   二項演算
   \begin{align*}
-    \bullet \ast \bullet &\colon
+    \tofu \ast \tofu &\colon
     \Shazo{X\times Y}{Y}{(x,y)}{x\ast y}\\
-    \bullet \diamond \bullet &\colon
+    \tofu \diamond \tofu &\colon
     \Shazo{Y\times Y}{Y}{(y,y')}{y\diamond y'}
   \end{align*}
   に対し,
@@ -1200,9 +1206,9 @@ $X$上の二項演算について分配的であるということを定義し�
 \begin{definition}
   二項演算
   \begin{align*}
-    \bullet \ast \bullet &\colon
+    \tofu \ast \tofu &\colon
     \Shazo{X\times X}{X}{(x,x')}{x\ast x'}\\
-    \bullet \diamond \bullet &\colon
+    \tofu \diamond \tofu &\colon
     \Shazo{X\times Y}{Y}{(x,y)}{x\diamond y}
   \end{align*}
   に対し,
@@ -1215,9 +1221,9 @@ $X$上の二項演算について分配的であるということを定義し�
 \begin{definition}
   二項演算
   \begin{align*}
-    \bullet \ast \bullet &\colon
+    \tofu \ast \tofu &\colon
     \Shazo{X\times Y}{X}{(x,y)}{x\ast y}\\
-    \bullet \diamond \bullet &\colon
+    \tofu \diamond \tofu &\colon
     \Shazo{Y\times Y}{Y}{(y,y')}{y\diamond y'}
   \end{align*}
   に対し,
@@ -1230,9 +1236,9 @@ $X$上の二項演算について分配的であるということを定義し�
 \begin{definition}
   二項演算
   \begin{align*}
-    \bullet \ast \bullet &\colon
+    \tofu \ast \tofu &\colon
     \Shazo{X\times X}{X}{(x,x')}{x\ast x'}\\
-    \bullet \diamond \bullet &\colon
+    \tofu \diamond \tofu &\colon
     \Shazo{X\times Y}{X}{(x,y)}{x\diamond y}
   \end{align*}
   に対し,
@@ -1247,10 +1253,115 @@ $X$上の二項演算について分配的であるということを定義し�
 
 \chapter{代数系}
 \section{いくつかの代数系の定義}
-写像と演算の組を代数系と呼ぶ.
+演算を伴った集合を代数系と呼ぶ.
 演算が複数与えられることもある.
 ここでは,
 代表的な代数系について定義と例を紹介する.
+\section{半群とモノイド}
+\begin{definition}
+  $X$を集合とし, $\ast$を$X$上の二項演算とする.
+  次の条件を満たすとき, $(X,\ast)$を半群(semi-group)と呼ぶ:
+  \begin{enumerate}
+    \item $x,y,z\in X \implies (x\ast y)\ast z=x\ast(y\ast z)$.
+  \end{enumerate}
+  つまり, $\ast$が結合律をみたす二項演算であるとき,
+  $(X,\ast)$を半群(semi-group)と呼ぶ.
+\end{definition}
+\begin{remark}
+  $(X,\ast)$が半群であることを,
+  $X$は$\ast$で半群であると言い表すことがある.
+  また, 文脈上$\ast$が明らかなときには,
+  $X$が半群であると言うこともある.
+\end{remark}
+\begin{definition}
+  $X$を集合とし, $\ast$を$X$上の二項演算とする.
+  $e\in X$とする.
+  以下の条件を満たすとき,
+  $(X,\ast,e)$をモノイド(monoid)と呼ぶ:
+  \begin{enumerate}
+    \item $x,y,z\in X \implies (x\ast y)\ast z=x\ast(y\ast z)$.
+    \item $x\in X \implies e\ast x = x\ast e= x$.
+  \end{enumerate}
+  つまり, $(X,\ast)$が半群であり
+  $e$が$\ast$の単位元であるとき,
+  $(X,\ast,e)$をモノイド(monoid)と呼ぶ.
+\end{definition}
+\begin{remark}
+  $(X,\ast,e)$がモノイドであることを,
+  $X$は$\ast$で$e$を単位元とするモノイドであるという.
+  また, 文脈上問題ないときには$X$がモノイドであるということもある.
+  $\ast$の単位元$e$のことをモノイド$X$の単位元と呼ぶ.
+\end{remark}
+\Cref{rem:uniq:unit}で見たように,
+単位元は, 存在するならただ一つである.
+したがって, 
+$(X,\ast,e)$も$(X,\ast,e')$もモノイドなら,
+$e=e'$である.
+そこで, 
+単位元を明示せず$(X,\ast)$がモノイドであるということもある.
+つまり, 次の様に定義することもある:
+\begin{definition}
+ $X$上の二項演算$\ast$が
+  以下の条件をみたすとき,
+  $(X,\ast)$がモノイドと呼ぶ:
+  \begin{enumerate}
+    \item $x,y,z\in X \implies (x\ast y)\ast z=x\ast(y\ast z)$.
+    \item 次の条件をみたす$e\in X$が存在する:
+      \begin{enumerate}
+        \item
+        $x\in X \implies e\ast x = x\ast e= x$.
+      \end{enumerate}
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  $(\ZZ_{>0},\cdot)$は, 半群である.
+  また, $1$が$\cdot$の単位元であるので,
+  $(\ZZ_{>0},\cdot,1)$はモノイドである.
+  同様に,
+  $(\NN,\cdot,1)$もモノイドである.
+\end{example}
+\begin{example}
+  $(\NN,+)$は, 半群である.
+  また, $0$が$+$の単位元であるので,
+  $(\NN,+,0)$はモノイドである.
+\end{example}
+\begin{nonexample}
+  $(\ZZ_{>0},+)$も半群である.
+  しかし,
+  $0\not\in \ZZ_{>0}$であり単位元が存在しないので,
+  モノイドではない.
+\end{nonexample}
+\begin{nonexample}
+  整数$x,y$に対し, その差を対応させる
+  \begin{align*}
+    \shazo{\tofu-\tofu}
+          {\ZZ\times \ZZ}{\ZZ}
+          {(x,y)}{x-y}
+  \end{align*}
+  は二項演算である.
+  このとき,
+  \begin{align*}
+    0-(0-1)&=0-(-1)=1\\
+    (0-0)-1&=0-1=-1
+  \end{align*}
+  となり結合律が成り立たない.
+  したがって,
+  $(\ZZ,-)$は半群ではない.
+\end{nonexample}
+\begin{nonexample}
+  $2$元集合$X=\Set{\top, \bot}$上の演算$\tofu\lxor\tofu$を
+  \begin{align*}
+    \top \lxor \top &= \bot&
+    \top \lxor \bot &= \top\\
+    \bot \lxor \top &= \top&
+    \bot \lxor \bot &= \bot    
+  \end{align*}
+  で定める.
+  このとき, $(X,\lxor,\bot)$はモノイドである.
+  $\lxor$は排他的論理和と呼ばれる.
+\end{nonexample}
+
 \section{群}
 \section{環}
 \section{体}
