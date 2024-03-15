@@ -242,6 +242,7 @@
 \makeatletter
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\MYPerp}{\mathrel}{symbolsC}{121}
+\newcommand{\commatospace}[1]{\@for\mytoken:=#1\do{\,\mytoken\,}}
 \makeatother
 \newcommand{\indep}{\MYPerp}
 % independent 
@@ -319,5 +320,6 @@
 \item $\RR_{\geq 0}$: 非負実数全体のなす集合.
 \item $S_n$: $n$次対称群.
 \end{itemize}
+$11\commatospace{1,2,34,5}11$
 \end{document}
 
