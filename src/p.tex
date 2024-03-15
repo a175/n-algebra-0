@@ -995,6 +995,7 @@ $\ast$が単位元$e$を持つとする.
   $y=y'$.
 \end{cor}
 \begin{remark}
+\label{rem:uniq:inv}
   $\ast$が結合的であるとき,
   \Cref{cor:uniq:inv}により,
   $x\in X$の逆元は, 存在するなら, $x\in X$に対して,
@@ -1301,6 +1302,7 @@ $e=e'$である.
 単位元を明示せず$(X,\ast)$がモノイドであるということもある.
 つまり, 次の様に定義することもある:
 \begin{definition}
+  \label{def:monoid:alt}
  $X$上の二項演算$\ast$が
   以下の条件をみたすとき,
   $(X,\ast)$がモノイドと呼ぶ:
@@ -1313,7 +1315,10 @@ $e=e'$である.
       \end{enumerate}
   \end{enumerate}
 \end{definition}
-
+\begin{remark}
+  \Cref{def:monoid:alt}を言い換えると,
+  単位元をもつ半群をモノイドと呼ぶということである.
+\end{remark}
 \begin{example}
   $(\ZZ_{>0},\cdot)$は, 半群である.
   また, $1$が$\cdot$の単位元であるので,
@@ -1363,7 +1368,58 @@ $e=e'$である.
 \end{nonexample}
 
 \subsection{群}
-
+\begin{definition}
+  $\ast$を$G$上の二項演算とする.
+  $e\in G$とし,
+  $\tofu^{-1}$を$G$上の単項演算とする.
+  以下の条件を満たすとき,
+  $(G,\ast,e,\tofu^{-1})$を群と呼ぶ:
+  \begin{enumerate}
+  \item $x,y,z\in G\implies (x\ast y) \ast z = x\ast (y\ast z)$.
+  \item $x\in G\implies x\ast e=e\ast x =x$.
+  \item $x\in G \implies x\ast x^{-1}=x^{-1}\ast x =e$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $(G,\ast,e, \tofu^{-1})$が群であることを,
+  $X$は$\ast$で,
+  $e$を単位元とし, $x^{-1}$が$x$の逆元である
+  群であるという.
+  また, 文脈上問題ないときには$G$がモノイドであるということもある.
+  $\ast$の単位元$e$のことを群$G$の単位元と呼ぶ.
+\end{remark}
+\Cref{rem:uniq:unit,rem:uniq:inv}で見たように,
+$G$の単位元や$x$の逆元は,
+$\ast$に対し一意的に定まる.
+単位元や逆元与え方を明示せず$(G,\ast)$が群であるということもある.
+つまり, 次の様に定義することもある:
+\begin{definition}
+  \label{def:grp:alt}
+ $G$上の二項演算$\ast$が
+  以下の条件をみたすとき,
+  $(G,\ast)$がモノイドと呼ぶ:
+  \begin{enumerate}
+    \item $x,y,z\in G \implies (x\ast y)\ast z=x\ast(y\ast z)$.
+    \item
+      \label{def:grp:alt:item:e}
+      次の条件をみたす$e\in G$が存在する:
+      \begin{enumerate}
+        \item
+        $x\in G \implies e\ast x = x\ast e= x$.
+      \end{enumerate}
+    \item
+      \Cref{def:grp:alt:item:e}の$e$と任意の$x\in G$に対し,
+      次の条件を満たす$y\in G$が存在する:
+      \begin{enumerate}
+      \item $x\ast y=y\ast x=e$.
+      \end{enumerate}
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  \Cref{def:grp:alt}を言い換えると,
+  すべての元に対し逆元が存在するモノイド
+  を群と呼ぶということである.
+\end{remark}
 \section{群}
 \section{環}
 \section{体}
