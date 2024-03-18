@@ -1367,6 +1367,21 @@ $e=e'$である.
   $\lxor$は排他的論理和と呼ばれる.
 \end{nonexample}
 
+\begin{example}
+  $X$を集合とする.
+  $X$の元の列$w_1w_2\cdots w_l$を,
+  $X$をアルファベットとする長さ$l$のワードと呼ぶ.
+  長さ$0$のワードを空列と呼び,
+  ここでは$\lambda$で表す.
+  $X^\ast$で$X$をアルファベットとするワードをすべて集めた集合とする.
+  $w=w_1w_2\cdots w_l, v=v_1v_2\cdots v_m\in X^\ast$に対し,
+  $w$と$v$の連結$w\cdot v$を,
+  \begin{align*}
+    w\cdot v = w_1w_2\cdots w_lv_1v_2\cdots v_m
+  \end{align*}
+  で与えられる長さ$l+m$のワードとする.
+  このとき, $(X^\ast,\cdot,\lambda)$はモノイドである.
+\end{example}
 \subsection{群}
 \begin{definition}
   $\ast$を$G$上の二項演算とする.
@@ -1419,6 +1434,18 @@ $\ast$に対し一意的に定まる.
   \Cref{def:grp:alt}を言い換えると,
   すべての元に対し逆元が存在するモノイド
   を群と呼ぶということである.
+\end{remark}
+
+\begin{definition}
+  群$(G,\ast,e,\tofu^{-1})$が次の条件を満たすとき,
+  $(G,\ast,e,\tofu^{-1})$をアーベル群と呼ぶ.
+  \begin{enumerate}
+  \item $x,y\in G\implies x\ast y =y\ast x$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  可換な群のことをアーベル群と呼ぶ.
+  可換群と呼ぶこともある.
 \end{remark}
 \section{群}
 \section{環}
