@@ -1400,7 +1400,7 @@ $e=e'$である.
   $X$は$\ast$で,
   $e$を単位元とし, $x^{-1}$が$x$の逆元である
   群であるという.
-  また, 文脈上問題ないときには$G$がモノイドであるということもある.
+  また, 文脈上問題ないときには$G$が群であるということもある.
   $\ast$の単位元$e$のことを群$G$の単位元と呼ぶ.
 \end{remark}
 \Cref{rem:uniq:unit,rem:uniq:inv}で見たように,
@@ -1451,6 +1451,7 @@ $\ast$に対し一意的に定まる.
 \begin{example}
   $(\ZZ,+,0,-\tofu)$はアーベル群である.
 \end{example}
+
 \begin{example}
   集合$X$に対し,
   $\Sym(X)$を
@@ -1467,7 +1468,256 @@ $\ast$に対し一意的に定まる.
 \end{example}
 
 
+
 \section{群}
+
+\begin{definition}[再掲]
+  $\ast$を$G$上の二項演算とする.
+  $e\in G$とし,
+  $\tofu^{-1}$を$G$上の単項演算とする.
+  以下の条件を満たすとき,
+  $(G,\ast,e,\tofu^{-1})$を群と呼ぶ:
+  \begin{enumerate}
+  \item $x,y,z\in G\implies (x\ast y) \ast z = x\ast (y\ast z)$.
+  \item $x\in G\implies x\ast e=e\ast x =x$.
+  \item $x\in G \implies x\ast x^{-1}=x^{-1}\ast x =e$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  通常は,
+  群の演算を積と呼び,
+  $x$の逆元を与える単項演算は$x^{-1}$のような形で与え,
+  単位元を$1$や$e$などのような記号で与えることが多い.
+  また, 例えば, 群$(G,\ast,e,\tofu^{-1})$であれば,
+  正の整数$n$に対し,
+  \begin{align*}
+    x^n &= (\cdots((x\ast x)\ast x) \ast \cdots) \ast x\\
+  \end{align*}
+  のように書く.
+  群の演算は結合律が成り立つので,
+  $x^n$は括弧の付け方を変えても同じものになる.
+  また, $x^0=e$とし, $x^{-n}=(x^{-1})^n$とする.
+  このとき, いわゆる指数法則
+  \begin{align*}
+    x^{n}\ast x^{m} &= x^{n+m}\\
+    (x^{n})^{m} &= x^{nm}
+  \end{align*}
+  が成り立つ.
+  
+  アーベル群の際には,
+  演算に$+$の様な記号を用い,
+  $x$の逆元を与える単項演算を$-x$のような形で与え,
+  また単位元を$0$のような記号で与えることがある.
+  この様な表記を用いたアーベル群を加法群と呼び,
+  その演算を和と呼ぶ.
+  また, 例えば, 加法群$(G,+,o,-\tofu)$では,
+  正の整数$n$に対し,
+  \begin{align*}
+    nx &= (\cdots((x+ x)+ x)+ \cdots) +x \\
+  \end{align*}
+  のように書く.
+  また, $0x=o$とし, $(-n)x=n(-x)$とする.
+  このとき, いわゆる分配法則
+  \begin{align*}
+    nx+m x &= (n+m)x\\
+    m(nx) &= (nm)x
+  \end{align*}
+  が成り立つ.
+\end{remark}
+
+
+
+
+\begin{definition}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  $G_1$から$G_2$への写像$f$
+  が次の条件を満たすとき,
+  $f$は$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への群準同型写像であるという:
+  \begin{enumerate}
+  \item $a,b\in G_1 \implies f(a\ast_1 b) = f(a)\ast_2 f(b)$.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  次の条件を満たすとき,
+  $f$は$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への同型写像であるという:
+  \begin{enumerate}
+    \item $f$は$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への群準同型写像である.
+    \item 次の条件を満たす$g$が存在する:
+      \begin{enumerate}
+      \item $g$は$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$からへ$(G_1,\ast_1,e_1,\tofu^{-1})$の群準同型写像である.
+      \item $g\circ f = id_{G_1}$.
+      \item $f\circ g = id_{G_2}$.
+      \end{enumerate}
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  $(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への同型写像$f$が存在するとき,
+  $(G_1,\ast_1,e_1,\tofu^{-1})$と
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$は同型であるという.
+  また,
+  $(G_1,\ast_1,e_1,\tofu^{-1})$と
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$は同型であることを,
+  $(G_1,\ast_1,e_1,\tofu^{-1})\simeq(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$
+  で表す.
+\end{definition}
+
+\begin{remark}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  $(G,\ast,e,\tofu^{-1})$から$(G,\ast,e,\tofu^{-1})$への群準同型写像を
+  を自己準同型写像,
+  $(G,\ast,e,\tofu^{-1})$から$(G,\ast,e,\tofu^{-1})$への同型写像を
+  を自己同型写像と呼ぶ.
+\end{remark}
+
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
+  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
+  このとき, $f(e_1)=e_2$.
+\end{prop}
+
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
+  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
+  このとき, $x\in G_1$に対し, $f(x^{-1})=x^{\overline{-1}}$.
+\end{prop}
+
+\begin{definition}
+  
+  集合$G$が有限集合であるとき,
+  群$(G,\ast,e,\tofu^{-1})$を有限群と呼ぶ.
+  集合$G$に含まれる元の個数を群$(G,\ast,e,\tofu^{-1})$の位数と呼び,
+  $\numof{G}$で表す.
+  
+  集合$G$が無限集合であるとき,
+  群$(G,\ast,e,\tofu^{-1})$を無限群と呼ぶ.
+  また, 位数は無限であるといい$\numof{G}=\infty$と書く.
+\end{definition}
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $x\in G$とする.
+  $x^k=e$となる正の整数がないとき,
+  $x$の位数は無限であるといい,
+  そうでないとき,
+  $x$の位数は有限であるという.
+  $x$の位数が有限であるとき,
+  $x^k=e$となる正の整数で最小のものを,
+  元$x$の位数と呼ぶ.
+\end{definition}
+
+\begin{example}
+  $(\ZZ,+,0,-tofu)$はアーベル群である.
+  $0$の位数は$1$,
+  それ以外の元の位数は無限.
+\end{example}
+
+\begin{example}
+  $\Set{0,1,2,\ldots,6}$は通常の$+$では群にならない.
+  $\pmod{6}$では群.
+  各元の位数は$1,6,3,2,2,3,6$.
+\end{example}
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  $H\subset G$とする.
+  $(H,\ast,e,\tofu^{-1})$が群であるとき,
+  $(H,\ast,e,\tofu^{-1})$は$G$の部分群であるいう.
+\end{definition}
+
+\begin{example}
+  $\Set{0,1,2,\ldots,6}$
+  の部分群を与える.
+\end{example}
+
+\begin{definition}
+  $G$と$\Set{e}$は部分群となる.
+  これらを自明な部分群と呼ぶ.
+
+  $G$とは等しくはない部分群を真の部分群と呼ぶ.
+\end{definition}
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  次の条件を満たすとき$N$を$G$の正規部分群と呼ぶ:
+  \begin{enumerate}
+  \item $N$は, $G$の部分群.
+  \item $x\in N$, $g\in G \implies g \ast x \ast g^{-1} \in N$.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  自明な部分群は正規部分群.
+\end{remark}
+\begin{definition}
+  自明な部分群以外に正規部分群がない群を単純群と呼ぶ.
+\end{definition}
+\begin{remark}
+  アーベル群の部分群は正規部分群.
+\end{remark}
+
+\begin{definition}
+  $S\subset G$に対し,
+  \begin{align*}
+    \Braket{S}=\Set{a_1^{m_1}\ast \dots a_k^{m_k}|k\in\NN, a_i\in G, m_i\in \ZZ}
+  \end{align*}
+  とすると$G$の部分群となる.
+  $S$で生成された$G$の部分群と呼び, $S$をこの部分群の生成系とよぶ.
+\end{definition}
+\begin{definition}
+  $a\in G$に対し,
+  \begin{align*}
+    \Braket{a}=\Set{a^n|n\in\ZZ}
+  \end{align*}
+  とおく.
+  $a$で生成された巡回群と呼ぶ.
+\end{definition}
+
+\begin{example}
+$(\ZZ,0,+,-\tofu)$は$1$で生成されている.
+\end{example}
+
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  $G_1\times G_2=\Set{(x_1,x_2)|x_1\in G_1,x_2\in G_2}$
+  上の演算$\ast$を,
+  \begin{align*}
+    (x_1,x_2)\ast(y_1,y_2)=(x_1\ast_1y_1,x_2\ast y_2)
+  \end{align*}
+  で定めると, $(G_1\times G_2,\ast)$は群になる.
+  これを$G_1$と$G_2$の直積群と呼ぶ.
+\end{prop}
+
+\begin{example}
+  $\ZZ/6\ZZ$の自己同型すべて.
+\end{example}
+\begin{example}
+$\RR\times \RR$と$\CC$は同型.
+\end{example}
+
+\begin{definition}
+  $f$を
+  $(G_1,\ast_1,e_1,\tofu^{-1})$から
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$
+  への群準同型写像とする.
+  \begin{align*}
+    \Ker(f)&=\Set{x\in G_1|f(x)=e_1}\\
+    \Img(f)&=\Set{f(x)|x\in G_1}
+  \end{align*}
+  とし, $f$の核, $f$の像と呼ぶ.
+\end{definition}
+
+\begin{prop}
+  $\Img(f)$は$G_2$の部分群.
+  $\Ker(f)$は$G_1$の正規部分群.
+\end{prop}
 \section{環}
 \section{体}
 \sectionX{章末問題}
