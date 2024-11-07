@@ -1873,10 +1873,136 @@ $\RR\times \RR$と$\CC$は同型.
   $\Ker(f)$は$G_1$の正規部分群.
 \end{prop}
 
+\subsection{剰余類}
+  群$G$とその部分群$H$について考える,
+  $G$上の二項関係$\sim$を次で定義する:
+  \begin{align*}
+    x\sim y\iff x^{-1}\ast y\in H.
+  \end{align*}
+  このとき, $\sim$は, 以下を満たす:
+  \begin{enumerate}
+    \item $x\in G \implies x\sim x$
+    \item $x\sim y, y\sim z \implies x\sim z$
+    \item $x\sim y \implies y\sim x$
+  \end{enumerate}
+  つまり, $\sim$は$G$上の同値関係である.
+  $\sim$による剰余類は
+  \begin{align*}
+    x\ast H = \Set{x\ast h|h\in H} 
+  \end{align*}
+  とかける.
+  $G/H$で, 剰余類を全て集めた集合$\Set{x\ast H| x\in G}$を表す.
+
+  \begin{lemma}
+    $N$が$G$の正規部分群であるとき,
+    $x\ast N = N\ast x$
+  \end{lemma}
+
+  $G/N$上の演算 $*$を,
+  \begin{align*}
+    (x\ast H) * (y\ast H) = (x\ast y)\ast H
+  \end{align*}
+  で定義する.
+  $G/N$はこの演算で群となる.
+  これを$N$による$G$の剰余群と呼ぶ.
+
+  \begin{theorem}
+    群準同型写像$f\colon G \to G'$に対し,
+    $G/\Ker(f)\simeq \Img(f)$.
+  \end{theorem}
+  \begin{proof}
+    $x,y\in G$かつ$x\ast \Ker(f)=y\ast\Ker(f)$であるとき,
+    $x=y\ast k$を$k\in \Ker(f)$みたす$k$がとれるので,
+    $f(x)=f(y\ast k)=f(y)\ast f(k)=f(y)\ast e_{G'}=f(y)$となる.
+    したがって, 次の写像が定義できる.
+    \begin{align*}
+      \shazo{g}{G/\Ker(f)}{\Img(f)}{x\ast \Ker(f)}{f(x)}
+    \end{align*}
+    また,
+    \begin{align*}
+      g(x\ast \Ker(f))\ast_2 g(y\ast \Ker(f))&=f(x)\ast_2 f(y) \\
+      g(x\ast \Ker(f) \ast y\ast \Ker(f))&=f(x\ast y \ast \Ker(f))=f(x\ast y)=f(x)\ast_2 f(y).
+    \end{align*}
+    であるので, $g$は準同型写像.
+
+    $f(x)\in \Img(f)$に対し, $x\ast \Ker(f) \in G/\Ker(f)$
+    をとれば,
+    $f(x)=g(x\ast \Ker(f))$であることから,
+    全射であることがわかる.
+
+    また, $g(x\ast H)=e'$とすると, $f(x)=e'$であるので, $x\in \Ker(f)$である.
+    したがって, $\Ker(g)=\Set{e\ast \Ker(f)}$である.
+  \end{proof}
+  \begin{theorem}
+    $G$を有限群とし, $H$を$G$の部分群する.
+    このとき, $H$の位数は$G$の位数を割り切る.
+  \end{theorem}
+  \begin{definition}
+    $\frac{|G|}{|H|}$を$G$における$H$の指数と呼ぶ.
+  \end{definition}
 
 
+  \subsection{有限アーベル群}
+  $\ZZ/m\ZZ \times \ZZ/n\ZZ$上の演算を,
+  \begin{align*}
+    (a,b)+(a',b') = (a+a',b+b')
+  \end{align*}
+  で定義する.
+  この演算によりアーベル群になる.
+  \begin{theorem}
+    $m$, $n$が互いに素のとき, $\ZZ/m\ZZ \times \ZZ/n\ZZ \simeq \ZZ/mn\ZZ$.
+  \end{theorem}
+%%   \begin{lemma}
+%%     $m,n$の最大公約数が$l$のとき,
+%%     $ma+nb=l$を満たす$a,b$がとれる.
+%%   \end{lemma}
+  \begin{example}
+    $\ZZ/6\ZZ\simeq \ZZ/2\ZZ\times \ZZ/3\ZZ$
+  \end{example}
+    
+  
+  \begin{theorem}
+    [有限生成アーベル群の基本定理]
+    有限生成アーベル群$G$に対し,
+    \begin{align*}
+      G\simeq \ZZ^n \times \ZZ/p_1^{a_1} \ZZ \times \cdots \times \ZZ/p_k^{a_k}\ZZ
+    \end{align*}
+    を満たす素数$p_i$と整数$n$, $a_i$が存在する.
+  \end{theorem}
 
+
+  \subsection{一般線形群}
+  \begin{align*}
+    \GL(n,\RR)&=\Set{A}
+    \SL(n,\RR)&
+  \end{align*}
+  \begin{prop}
+    $\det$は準同型写像
+  \end{prop}
+  \begin{prop}
+    $\SL(n,\RR)$は$\GL(n,\RR)$の正規部分群.
+  \end{prop}
+
+  \subsection{対称群}
+  $n>2$で,
+  $S_n$はアーベル群ではない.
+
+  \begin{theorem}
+    任意の置換はいくつかの巡回置換の積で表せる.
+  \end{theorem}
+  \begin{theorem}
+    任意の置換はいくつかの互換の積で表せる.
+  \end{theorem}
+
+  \begin{definition}
+    $\sigma$の符号.  偶置換, 奇置換.
+  \end{definition}
+
+  符号は, 準同型写像.  交代群.
 \section{環}
+
+
+
 \section{体}
 \sectionX{章末問題}
 \begin{enumerate}
