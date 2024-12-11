@@ -1176,13 +1176,13 @@ $x^{-1}$がもとの集合に存在していても,
   $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
   $\ast$が可換であり,
   $\ast$は$\diamond$に対し左分配的なら,
-  $\ast$は$\diamond$に対し分配的であるという.
+  $\ast$は$\diamond$に対し分配的である.
 \end{cor}
 \begin{cor}
   $\ast$, $\diamond$を$X$上の中置記法の二項演算とする.
   $\ast$が可換であり,
   $\ast$は$\diamond$に対し右分配的なら,
-  $\ast$は$\diamond$に対し分配的であるという.
+  $\ast$は$\diamond$に対し分配的である.
 \end{cor}
 \begin{example}
   $\ZZ$上の通常の和$+$と積$\cdot$を考える.
@@ -1999,12 +1999,90 @@ $\RR\times \RR$と$\CC$は同型.
   \end{definition}
 
   符号は, 準同型写像.  交代群.
-\section{環}
+
+  \section{環}
+  \subsection{}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{}
+  \begin{theorem}
+    \label{ring:thm:prime:domain}
+    可換環$R$のイデアル$I$に対し以下は同値:
+    \begin{enumerate}
+    \item
+      \label{ring:thm:prime:domain:item:1}
+      $I$が素イデアルである
+    \item
+      \label{ring:thm:prime:domain:item:2}
+      $R/I$が整域である
+    \end{enumerate}
+  \end{theorem}
+  \begin{proof}\paragraph{\Cref{ring:thm:prime:domain:item:1}$\implies$\Cref{ring:thm:prime:domain:item:2}}\paragraph{\Cref{ring:thm:prime:domain:item:2}$\implies$\Cref{ring:thm:prime:domain:item:1}}\end{proof}
+    
 
 
+    \begin{theorem}
+      \label{ring:thm:maximal:field}
+    可換環$R$のイデアル$I$に対し以下は同値:
+    \begin{enumerate}
+    \item
+      \label{ring:thm:maximal:field:item:1}
+      $I$が極大イデアルである
+    \item
+      \label{ring:thm:maximal:field:item:2}
+      $R/I$が体である
+    \end{enumerate}
+  \end{theorem}
+  \begin{proof}\paragraph{\Cref{ring:thm:maximal:field:item:1}$\implies$\Cref{ring:thm:maximal:field:item:2}}\paragraph{\Cref{ring:thm:maximal:field:item:2}$\implies$\Cref{ring:thm:maximal:field:item:1}}\end{proof}
+    
+  \begin{theorem}
+    可換環の極大イデアルは素イデアルである.
+  \end{theorem}
+  \begin{proof}
+    $I$を可換環$R$の極大イデアルであるとする.
+    このとき,
+    \Cref{ring:thm:maximal:field}より, $R/I$は体.
+    よって, $R/I$は整域.
+    \Cref{ring:thm:prime:domain}より, $I$は素イデアル.
+  \end{proof}
 
-\section{体}
-\sectionX{章末問題}
+  \begin{definition}
+    環$(R_1,+_1,\ast, 1_1)$, $(R_1,+_1,\cdot,1_2 )$
+    以下の条件を満たすとき
+    写像$\varphi\colon R_1 \to R_2$は,
+    $(R_1,+_1,\cdot, 1_1)$から$(R_1,+_1,\cdot,1_2 )$への
+    環準同型写像であるという.
+    \begin{enumerate}
+    \item $a,b\in R_1\implies \varphi(a+b)=\varphi(a)+\varphi(b)$.
+    \item $a,b\in R_1\implies \varphi(a\ast b)=\varphi(a)\cdot\varphi(b)$.
+    \item $\varphi(1_1)=1_2$.
+    \end{enumerate}
+  \end{definition}
+  \begin{definition}
+    同型写像, 同型
+  \end{definition}
+  \begin{proposition}
+    \begin{enumerate}
+    \item $\varphi$が同型である
+    \item $\varphi$全単射な準同型である
+    \end{enumerate}
+  \end{proposition}
+  
+  \begin{definition}
+    $\Ker$, $\Img$
+  \end{definition}
+  \begin{theorem}
+    $R_1/\Ker(\varphi)\simeq \Img(\varphi)$
+  \end{theorem}
+  \begin{proof}\end{proof}
+
+
+  \section{体}
+
+  \section{整数}
+  
+  \sectionX{章末問題}
 \begin{enumerate}
 \item 可換かつ結合的な二項演算の例を挙げよ.
 \item 非可換かつ結合的な二項演算の例を挙げよ.
