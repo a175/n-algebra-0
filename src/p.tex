@@ -1951,21 +1951,14 @@ $\ast$に対し一意的に定まる.
 
 \chapter{群}
 \section{群と群の準同型写像}
- 群を定義する.
- 準同型写像を定義する.
- 同型写像を定義する.
- 同型写像の定義を言い換える.
+TODO:
+%群を定義する.
+ %準同型写像を定義する.
+ %同型写像を定義する.
+ %同型写像の定義を言い換える.
  同型な群の例をあげる.
  (行列群としての実現とCの乗法群としての実現で巡回群を考える.)
  
- 部分群を定義する.
- 正規部分群を定義する.
- 例を挙げる.
- 剰余群を定義する.
- 例を挙げる.
- 準同型定理.
- 例を挙げる.
- normal iff Ker
 
 \begin{definition}[再掲]
   $\ast$を$G$上の二項演算とする.
@@ -2003,6 +1996,23 @@ $\ast$に対し一意的に定まる.
   \end{enumerate}
 \end{definition}
 
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
+  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
+  このとき, $f(e_1)=e_2$.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
+  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
+  このとき, $x\in G_1$に対し, $f(x^{-1})=x^{\overline{-1}}$.
+\end{prop}
+\begin{proof}\end{proof}
+
+
 \begin{definition}
   $(G_1,\ast_1,e_1,\tofu^{-1})$,
   $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
@@ -2039,21 +2049,40 @@ $\ast$に対し一意的に定まる.
   を自己同型写像と呼ぶ.
 \end{remark}
 
+\begin{lemma}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  $f$は
+  $(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像とする.
+  $f$が全単射であるとき,
+  逆写像$f^{-1}$は,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$から
+  $(G_1,\ast_1,e_1,\tofu^{-1})$への準同型写像である.
+\end{lemma}
+\begin{proof}\end{proof}
 \begin{prop}
   $(G_1,\ast_1,e_1,\tofu^{-1})$,
-  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
-  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
-  このとき, $f(e_1)=e_2$.
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とする.
+  写像$f\colon G_1\to G_2$に対し
+  以下は同値:
+  \begin{enumerate}
+  \item $f$は同型写像.
+  \item $f$は全単射かつ$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像.
+  \end{enumerate}
 \end{prop}
+\begin{proof}\end{proof}
 
-\begin{prop}
-  $(G_1,\ast_1,e_1,\tofu^{-1})$,
-  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
-  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
-  このとき, $x\in G_1$に対し, $f(x^{-1})=x^{\overline{-1}}$.
-\end{prop}
 
 \subsection{準同型定理}
+TODO:
+部分群を定義する.
+ 正規部分群を定義する.
+ 例を挙げる.
+ 剰余群を定義する.
+ 例を挙げる.
+ 準同型定理.
+ 例を挙げる.
+ normal iff Ker
 
 \section{群に関する用語}
 \begin{definition}
