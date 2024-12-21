@@ -2023,6 +2023,29 @@ TODO:
 \end{prop}
 \begin{proof}\end{proof}
 
+\begin{definition}
+  $f$を
+  $(G_1,\ast_1,e_1,\tofu^{-1})$から
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$
+  への群準同型写像とする.
+  \begin{align*}
+    \Ker(f)&=\Set{x\in G_1|f(x)=e_1}\\
+    \Img(f)&=\Set{f(x)|x\in G_1}
+  \end{align*}
+  とし, $f$の核, $f$の像と呼ぶ.
+\end{definition}
+\begin{prop}
+  $(G_1,\ast_1,e_1,\tofu^{-1})$,
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
+  $f$を$(G_1,\ast_1,e_1,\tofu^{-1})$から$(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$への準同型写像であるとする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item $f$が全射$\iff$ $\Img(f)=G_2$.
+  \item $f$が単射$\iff$ $\Ker(f)=\Set{e_1}$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
 
 \begin{definition}
   $(G_1,\ast_1,e_1,\tofu^{-1})$,
@@ -2095,6 +2118,175 @@ TODO:
  例を挙げる.
  normal iff Ker
 
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  $H\subset G$とする.
+  $(H,\ast,e,\tofu^{-1})$が群であるとき,
+  $H$は$(G,\ast,e,\tofu^{-1})$の部分群であるいう.
+\end{definition}
+\begin{remark}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $H\subset G$とする.
+  $(H,\ast,e,\tofu^{-1})$が群であるためには,
+  $\ast$が$H$上の二項演算でないといけない.
+  つまり,
+  \begin{align*}
+    x,y\in H \implies x\ast y\in H
+  \end{align*}
+  でないといけない.
+  また, $e\in H$でないといけない.
+  また, $\tofu^{-1}$は$H$上の単項演算でないといけない.
+  つまり,
+  \begin{align*}
+    x\in H \implies x^{-1}\in H
+  \end{align*}
+  でないといけない.
+  一方, これらの演算が$H$で閉じていることがわかれば,
+  $\ast$が結合律を満たすこと,
+  $e$が単位元であること,
+  $x^{-1}$が$x$の逆元であることは,
+  演算の性質であるので, $G$が群であることから自動的に成り立つ.
+\end{remark}
+\begin{prop}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $H\subset G$とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $H$が$G$の部分郡である.
+  \item 以下が成り立つ:
+    \begin{enumerate}
+    \item $x,y \in H \implies x\ast y \in H$.
+    \item $e\in H$.
+    \item $x \in H \implies x^{-1} \in H$.
+    \end{enumerate}
+  \item 以下が成り立つ:
+    \begin{enumerate}
+    \item $H\neq \emptyset$.
+    \item $x,y \in H \implies x\ast y^{-1} \in H$.
+    \end{enumerate}
+  \item 以下が成り立つ:
+    \begin{enumerate}
+    \item $H\neq \emptyset$.
+    \item $x,y \in H \implies x^{-1}\ast y \in H$.
+    \end{enumerate}
+  \end{enumerate}
+\end{prop}
+
+\begin{example}
+  $\Set{0,1,2,\ldots,6}$
+  の部分群を与える.
+\end{example}
+
+\begin{example}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  $G$と$\Set{e}$は$G$の部分群となる.
+\end{example}
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  $G$と$\Set{e}$
+  を$G$の自明な部分群と呼ぶ.
+  $G$でも$\Set{e}$でもない
+  $G$の部分群を$G$の非自明な部分群と呼ぶ.
+  $G$とは等しくはない$G$の部分群を$G$の真の部分群と呼ぶ.
+\end{definition}
+
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とする.
+  次の条件を満たすとき$N$を$G$の正規部分群と呼ぶ:
+  \begin{enumerate}
+  \item $N$は, $G$の部分群.
+  \item $x\in N$, $g\in G \implies g \ast x \ast g^{-1} \in N$.
+  \end{enumerate}
+\end{definition}
+\begin{example}
+  自明な部分群は正規部分群.
+\end{example}
+
+
+\begin{prop}
+  $f$を
+  $(G_1,\ast_1,e_1,\tofu^{-1})$から
+  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$
+  への群準同型写像とする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item  $\Img(f)$は$G_2$の部分群.
+  \item  $\Ker(f)$は$G_1$の正規部分群.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $H$を$G$の部分群とする.
+  このとき, $x\in G$に対し, $x\ast H =\Set{x\ast h | h\in H}$とし,
+  \begin{align*}
+    G/H = \Set{x\ast H |x\in G}
+  \end{align*}
+  と定義する.
+\end{definition}
+
+\begin{lemma}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $N$を$G$の正規部分群とする.
+  $x\ast N=x'\ast N$かつ$y\ast N = y'\ast N$ならば,
+  $x\ast y)\ast N = (x'\ast y' )\ast N$      
+\end{lemma}
+\begin{proof}\end{proof}
+\begin{theorem}
+  \label{grp:thm:quotient:group} 
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $N$を$G$の正規部分群とする.
+  $x\ast N, y\ast N \in G/N$に対し,
+  \begin{align*}
+    (x\ast N) \cdot (y\ast N) &= (x\ast y)\ast N
+  \end{align*}
+  $G/N$はこの演算で群となる.
+  $G/N$の単位元は$e\ast N=N$であり,
+  $x\ast N$の逆元は$x^{-1}\ast N$である.
+\end{theorem}
+\begin{proof}\end{proof}
+\begin{definition}
+  $(G,\ast,e,\tofu^{-1})$を群とし,
+  $N$を$G$の正規部分群とする.
+  \Cref{grp:thm:quotient:group}の群$G/N$を$G$の$N$による剰余群と呼ぶ.
+  通常は$G/N$の演算も$G$の演算と同じ記号を用いる.
+  つまり$x\ast N$と$y\ast N$の積を$(x\ast N)\ast (y\ast N)$と書く.
+\end{definition}
+
+\begin{theorem}
+  群準同型写像$f\colon G \to G'$に対し,
+  $G/\Ker(f)\simeq \Img(f)$.
+\end{theorem}
+\begin{proof}
+  $x,y\in G$かつ$x\ast \Ker(f)=y\ast\Ker(f)$であるとき,
+  $x=y\ast k$を$k\in \Ker(f)$みたす$k$がとれるので,
+  $f(x)=f(y\ast k)=f(y)\ast f(k)=f(y)\ast e_{G'}=f(y)$となる.
+  したがって, 次の写像が定義できる.
+  \begin{align*}
+    \shazo{g}{G/\Ker(f)}{\Img(f)}{x\ast \Ker(f)}{f(x)}
+  \end{align*}
+  また,
+  \begin{align*}
+      g(x\ast \Ker(f))\ast_2 g(y\ast \Ker(f))&=f(x)\ast_2 f(y) \\
+      g(x\ast \Ker(f) \ast y\ast \Ker(f))&=f(x\ast y \ast \Ker(f))=f(x\ast y)=f(x)\ast_2 f(y).
+  \end{align*}
+  であるので, $g$は準同型写像.
+  
+  $f(x)\in \Img(f)$に対し, $x\ast \Ker(f) \in G/\Ker(f)$
+  をとれば,
+  $f(x)=g(x\ast \Ker(f))$であることから,
+  全射であることがわかる.
+  
+  また, $g(x\ast H)=e'$とすると, $f(x)=e'$であるので, $x\in \Ker(f)$である.
+  したがって, $\Ker(g)=\Set{e\ast \Ker(f)}$である.
+\end{proof}
+
+
 \section{群に関する用語}
 \begin{definition}
   
@@ -2132,36 +2324,6 @@ TODO:
   各元の位数は$1,6,3,2,2,3,6$.
 \end{example}
 
-\begin{definition}
-  $(G,\ast,e,\tofu^{-1})$を群とする.
-  $H\subset G$とする.
-  $(H,\ast,e,\tofu^{-1})$が群であるとき,
-  $(H,\ast,e,\tofu^{-1})$は$G$の部分群であるいう.
-\end{definition}
-
-\begin{example}
-  $\Set{0,1,2,\ldots,6}$
-  の部分群を与える.
-\end{example}
-
-\begin{definition}
-  $G$と$\Set{e}$は部分群となる.
-  これらを自明な部分群と呼ぶ.
-
-  $G$とは等しくはない部分群を真の部分群と呼ぶ.
-\end{definition}
-
-\begin{definition}
-  $(G,\ast,e,\tofu^{-1})$を群とする.
-  次の条件を満たすとき$N$を$G$の正規部分群と呼ぶ:
-  \begin{enumerate}
-  \item $N$は, $G$の部分群.
-  \item $x\in N$, $g\in G \implies g \ast x \ast g^{-1} \in N$.
-  \end{enumerate}
-\end{definition}
-\begin{remark}
-  自明な部分群は正規部分群.
-\end{remark}
 \begin{definition}
   自明な部分群以外に正規部分群がない群を単純群と呼ぶ.
 \end{definition}
@@ -2210,23 +2372,6 @@ $(\ZZ,0,+,-\tofu)$は$1$で生成されている.
 $\RR\times \RR$と$\CC$は同型.
 \end{example}
 
-\begin{definition}
-  $f$を
-  $(G_1,\ast_1,e_1,\tofu^{-1})$から
-  $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$
-  への群準同型写像とする.
-  \begin{align*}
-    \Ker(f)&=\Set{x\in G_1|f(x)=e_1}\\
-    \Img(f)&=\Set{f(x)|x\in G_1}
-  \end{align*}
-  とし, $f$の核, $f$の像と呼ぶ.
-\end{definition}
-
-\begin{prop}
-  $\Img(f)$は$G_2$の部分群.
-  $\Ker(f)$は$G_1$の正規部分群.
-\end{prop}
-\begin{proof}\end{proof}
 
 \subsection{剰余類}
   群$G$とその部分群$H$について考える,
@@ -2248,46 +2393,6 @@ $\RR\times \RR$と$\CC$は同型.
   とかける.
   $G/H$で, 剰余類を全て集めた集合$\Set{x\ast H| x\in G}$を表す.
 
-  \begin{lemma}
-    $N$が$G$の正規部分群であるとき,
-    $x\ast N = N\ast x$
-  \end{lemma}
-
-  $G/N$上の演算 $*$を,
-  \begin{align*}
-    (x\ast H) * (y\ast H) = (x\ast y)\ast H
-  \end{align*}
-  で定義する.
-  $G/N$はこの演算で群となる.
-  これを$N$による$G$の剰余群と呼ぶ.
-
-  \begin{theorem}
-    群準同型写像$f\colon G \to G'$に対し,
-    $G/\Ker(f)\simeq \Img(f)$.
-  \end{theorem}
-  \begin{proof}
-    $x,y\in G$かつ$x\ast \Ker(f)=y\ast\Ker(f)$であるとき,
-    $x=y\ast k$を$k\in \Ker(f)$みたす$k$がとれるので,
-    $f(x)=f(y\ast k)=f(y)\ast f(k)=f(y)\ast e_{G'}=f(y)$となる.
-    したがって, 次の写像が定義できる.
-    \begin{align*}
-      \shazo{g}{G/\Ker(f)}{\Img(f)}{x\ast \Ker(f)}{f(x)}
-    \end{align*}
-    また,
-    \begin{align*}
-      g(x\ast \Ker(f))\ast_2 g(y\ast \Ker(f))&=f(x)\ast_2 f(y) \\
-      g(x\ast \Ker(f) \ast y\ast \Ker(f))&=f(x\ast y \ast \Ker(f))=f(x\ast y)=f(x)\ast_2 f(y).
-    \end{align*}
-    であるので, $g$は準同型写像.
-
-    $f(x)\in \Img(f)$に対し, $x\ast \Ker(f) \in G/\Ker(f)$
-    をとれば,
-    $f(x)=g(x\ast \Ker(f))$であることから,
-    全射であることがわかる.
-
-    また, $g(x\ast H)=e'$とすると, $f(x)=e'$であるので, $x\in \Ker(f)$である.
-    したがって, $\Ker(g)=\Set{e\ast \Ker(f)}$である.
-  \end{proof}
   \begin{theorem}
     $G$を有限群とし, $H$を$G$の部分群する.
     このとき, $H$の位数は$G$の位数を割り切る.
