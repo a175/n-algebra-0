@@ -1961,16 +1961,8 @@ $\ast$に対し一意的に定まる.
 \begin{proof}\end{proof}
 
 \chapter{群}
-\section{群と群の準同型写像}
-TODO:
-%群を定義する.
- %準同型写像を定義する.
- %同型写像を定義する.
- %同型写像の定義を言い換える.
- 同型な群の例をあげる.
- (行列群としての実現とCの乗法群としての実現で巡回群を考える.)
- 
-
+\section{群の構造}
+\subsection{準同型写像と同型写像}
 \begin{definition}[再掲]
   $\ast$を$G$上の二項演算とする.
   $e\in G$とし,
@@ -2007,6 +1999,50 @@ TODO:
   \end{enumerate}
 \end{definition}
 
+\begin{example}
+  $(\ZZ,+)$は群であった.
+  $(\Set{1,-1},\cdot)$も群であった.
+  \begin{align*}
+    \shazo{\varphi}{\ZZ}{\Set{1,-1}}
+    {i}{(-1)^i}
+  \end{align*}
+  は準同型写像である.
+\end{example}
+
+\begin{example}
+  $(\RR,+)$は群であった.
+  $(\RR_{>0},\cdot)$も群であった.
+  \begin{align*}
+    \shazo{\varphi}{\RR_{>0}}{\RR}
+    {t}{e^t}
+  \end{align*}
+  は準同型写像である.
+  \begin{align*}
+    \shazo{\psi}{\RR}{\RR_{>0}}
+    {t}{\log(t)}
+  \end{align*}
+  も準同型写像である.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    G&=\Set{\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\cos(\theta)&\sin(\theta)\end{pmatrix}|\theta\in\RR}\\
+    G'&=\Set{\cos(\theta)+\sin(\theta)\sqrt{-1}|\theta\in\RR}
+  \end{align*}
+  とおくと, $G$は行列としての積で, $G'$は複素数としての積で
+  群である.
+  \begin{align*}
+    \shazo{\varphi}{G}{G'}
+    {\begin{pmatrix}x&-y\\y&x\end{pmatrix}}{x+\sqrt{-1}}
+  \end{align*}
+  は準同型写像である.
+  \begin{align*}
+    \shazo{\varphi}{G'}{G}
+    {x+\sqrt{-1}}{\begin{pmatrix}x&-y\\y&x\end{pmatrix}}
+  \end{align*}
+  も準同型写像である.
+\end{example}
+
 \begin{prop}
   $(G_1,\ast_1,e_1,\tofu^{-1})$,
   $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
@@ -2034,6 +2070,37 @@ TODO:
   \end{align*}
   とし, $f$の核, $f$の像と呼ぶ.
 \end{definition}
+\begin{example}
+  $(\ZZ,+)$は群であった.
+  $(\Set{1,-1},\cdot)$も群であった.
+  \begin{align*}
+    \shazo{\varphi}{\ZZ}{\Set{1,-1}}
+    {i}{(-1)^i}
+  \end{align*}
+  は準同型写像であった.
+  \begin{align*}
+    \Ker(\varphi)&=\Set{2n|n\in \ZZ}\\ 
+    \Img(\varphi)&=\Set{1,-1}
+  \end{align*}
+  である.
+\end{example}
+\begin{example}
+  $(\RR,+)$は群であった.
+  $(\RR\setminus\Set{0},\cdot)$も群であった.
+  \begin{align*}
+    \shazo{\varphi}{\RR}{\RR\setminus\Set{0}}
+    {t}{e^t}
+  \end{align*}
+  は準同型写像である.
+  \begin{align*}
+    \Ker(\varphi)&=\Set{0}\\ 
+    \Img(\varphi)&=\RR_{>0}
+  \end{align*}
+  である.
+\end{example}
+
+
+
 \begin{prop}
   $(G_1,\ast_1,e_1,\tofu^{-1})$,
   $(G_2,\ast_2,e_2,\tofu^{\overline{-1}})$を群とし,
@@ -2075,6 +2142,46 @@ TODO:
   で表す.
 \end{definition}
 
+\begin{example}
+  $(\RR,+)$,
+  $(\RR_{>0},\cdot)$は群であり,
+  \begin{align*}
+    \shazo{\varphi}{\RR_{>0}}{\RR}
+    {t}{e^t}\\
+    \shazo{\psi}{\RR}{\RR_{>0}}
+    {t}{\log(t)}
+  \end{align*}
+  は準同型写像である.
+  \begin{align*}
+    \varphi \circ \psi &= \id_{\RR}\\
+    \psi \circ \varphi &= \id_{\RR_{>0}}
+  \end{align*}
+  であるので, これらは同型写像であり,
+  $\RR_{>0}$と$\RR$は同型である.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    G&=\Set{\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\cos(\theta)&\sin(\theta)\end{pmatrix}|\theta\in\RR}\\
+    G'&=\Set{\cos(\theta)+\sin(\theta)\sqrt{-1}|\theta\in\RR}
+  \end{align*}
+  とおくと, $G$は行列としての積で, $G'$は複素数としての積で
+  群であり,
+  \begin{align*}
+    \shazo{\varphi}{G}{G'}
+    {\begin{pmatrix}x&-y\\y&x\end{pmatrix}}{x+\sqrt{-1}},\\
+    \shazo{\varphi}{G'}{G}
+    {x+\sqrt{-1}}{\begin{pmatrix}x&-y\\y&x\end{pmatrix}}
+  \end{align*}
+  は準同型写像である.
+  \begin{align*}
+    \varphi \circ \psi &= \id_{G'}\\
+    \psi \circ \varphi &= \id_{G}
+  \end{align*}
+  であるので, これらは同型写像であり,
+  $G$と$G'$は同型である.
+\end{example}
+
 \begin{remark}
   $(G,\ast,e,\tofu^{-1})$を群とする.
   $(G,\ast,e,\tofu^{-1})$から$(G,\ast,e,\tofu^{-1})$への群準同型写像を
@@ -2109,7 +2216,6 @@ TODO:
 
 \subsection{準同型定理}
 TODO:
-部分群を定義する.
  正規部分群を定義する.
  例を挙げる.
  剰余群を定義する.
@@ -2174,8 +2280,22 @@ TODO:
 \end{prop}
 
 \begin{example}
-  $\Set{0,1,2,\ldots,6}$
-  の部分群を与える.
+  \begin{align*}
+    \zeta = e^{\frac{2\pi\sqrt{-1}}{6}}= \cos(\frac{2\pi}{6})+\sin(\frac{2\pi}{6})\sqrt{-1}
+  \end{align*}
+  とし,
+  \begin{align*}
+    G=\Set{1,\zeta,\zeta^2,\zeta^3,\zeta^4,\zeta^5}
+  \end{align*}
+  とすると, $(G,\cdot)$は群である.
+  $G$の部分集合のうち,
+  \begin{align*}
+    H_6&=\Set{1,\zeta,\zeta^2,\zeta^3,\zeta^4,\zeta^5}\\
+    H_3&=\Set{1,\zeta^2,\zeta^4}\\
+    H_2&=\Set{1,\zeta^3}\\
+    H_1&=\Set{1}
+  \end{align*}
+  は$G$の部分群である.
 \end{example}
 
 \begin{example}
