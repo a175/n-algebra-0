@@ -5,6 +5,11 @@
 %\newcommand{\lxor}{\veebar}
 \newcommand{\lxor}{\oplus}
 
+\chapter*{}
+この原稿はまだ書きかけである.
+近いうちに改訂する.
+
+
 \chapter{演算}
 \section{演算について}
 集合$X$と集合$Y$が与えられているとする.
@@ -2280,6 +2285,7 @@ TODO:
 \end{prop}
 
 \begin{example}
+  \label{grp:ex:subgrp:c6}
   \begin{align*}
     \zeta = e^{\frac{2\pi\sqrt{-1}}{6}}= \cos(\frac{2\pi}{6})+\sin(\frac{2\pi}{6})\sqrt{-1}
   \end{align*}
@@ -2298,6 +2304,8 @@ TODO:
   は$G$の部分群である.
 \end{example}
 
+
+
 \begin{example}
   $(G,\ast,e,\tofu^{-1})$を群とする.
   $G$と$\Set{e}$は$G$の部分群となる.
@@ -2312,6 +2320,12 @@ TODO:
   $G$とは等しくはない$G$の部分群を$G$の真の部分群と呼ぶ.
 \end{definition}
 
+\begin{example}
+  \Cref{grp:ex:subgrp:c6}で挙げた例を再び考える.
+  $H_1$, $H_6$が$G$の自明な部分群.
+  $H_2$, $H_3$が$G$の非自明な部分群.
+  $H_1$, $H_2$, $H_3$が$G$の真の部分群.
+\end{example}
 
 \begin{definition}
   $(G,\ast,e,\tofu^{-1})$を群とする.
@@ -2323,6 +2337,9 @@ TODO:
 \end{definition}
 \begin{example}
   自明な部分群は正規部分群.
+\end{example}
+\begin{example}
+  アーベル群の部分群は正規部分群.
 \end{example}
 
 
@@ -2354,7 +2371,7 @@ TODO:
   $(G,\ast,e,\tofu^{-1})$を群とし,
   $N$を$G$の正規部分群とする.
   $x\ast N=x'\ast N$かつ$y\ast N = y'\ast N$ならば,
-  $x\ast y)\ast N = (x'\ast y' )\ast N$      
+  $(x\ast y)\ast N = (x'\ast y' )\ast N$      
 \end{lemma}
 \begin{proof}\end{proof}
 \begin{theorem}
